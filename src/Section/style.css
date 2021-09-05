@@ -1,6 +1,9 @@
 .section {
     padding: 5px;
     background-color: hsla(203, 80%, 90%, 0.80);
-    border-radius: 5px;
     margin: 20px auto;
+}
+
+.section__header {
+    text-align: center;
 }
