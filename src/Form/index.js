@@ -1,32 +1,33 @@
 import "./style.css"
 
 const Form = () => (
-<form className="form js-form">
-    <fieldset className="form__fieldset">
-        <legend className="form__legend">Kalkulator walut</legend>
-        <p className="form__adnotation">Pola oznaczone * są wymagane.</p>
-        <label>
-            <span className="form__labelText">Kwota PLN*: </span>
-            <input className="form__field js-amount" type="number" step="any" required />
-        </label>
-        <label>
-            <span className="form__labelText">Waluta posiadana*: </span>
-            <select className="form__field js-currency" name="currency">
-                <option value="Zero" selected>Wybierz walutę</option>
-                <option value="CHF">Frank Szwajcarski - CHF</option>
-                <option value="USD">Dolar - USD</option>
-                <option value="EUR">Euro - EUR</option>
-                <option value="GBP">Funt Brytyjski - GBP</option>
-                <option value="RUB">Rubel Rosysjki - RUB</option>
-            </select>
-        </label>
-        <label>
-            <span className="form__labelText">Kurs: </span>
-            <input className="form__field js-exchangeRate" type="number" value="0" readonly />
-        </label>
-        <button className="button">Przelicz</button>
-    </fieldset>
-</form>
+    <form className="form">
+        <fieldset className="form__fieldset">
+            <p className="form__adnotation">Required fields mark *.</p>
+            <label className="form__label">
+                <span className="form__labelText">PLN Amount*: </span>
+                <input className="form__field" type="number" step="any" required />
+            </label>
+            <label className="form__label">
+                <span className="form__labelText">Exchange currency*: </span>
+                <select className="form__field" name="currency">
+                    <option value="Zero" selected>Choose currency</option>
+                    <option value="CHF">CHF</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                </select>
+            </label>
+            <label className="form__label">
+                <span className="form__labelText">Exchange rate: </span>
+                <input className="form__field js-exchangeRate" type="number" value="0" readonly />
+            </label>
+            <div className="form__buttonContainer">
+                <button className="form__button ">Count</button>
+                <button className="form__button" type="reset">Clear</button>
+            </div>
+        </fieldset>
+    </form>
 );
 
 export default Form;
