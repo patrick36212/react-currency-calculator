@@ -1,0 +1,17 @@
+.button {
+    padding: 10px;
+    background-color: hsl(203, 92%, 50%);
+    border-radius: 5px;
+    border: 1px solid currentColor;
+    color: hsl(0, 0%, 96%);
+    max-width: 200px;
+    width: 100%;
+}
+
+.button:hover {
+    border: 1px solid hsl(0, 0%, 50%);
+}
+.button:active {
+    border: 1px solid hsl(0, 0%, 0%);
+    background-color: hsl(203, 92%, 40%);
+}
