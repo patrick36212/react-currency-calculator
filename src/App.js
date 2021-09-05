@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import Button from './Button';
+import Container from './Container';
+import Footer from './Footer';
+import Form from './Form';
+import Header from './Header';
+import "./index.css";
+import Section from './Section';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Header title="React currency calculator" />
+        <Section body={<Form />} extraContent={<Button />} />
+        <Section title="Przeliczona Kwota" />
+      <Footer name="Patryk Krawczyk" year="2021" />
+    </Container>
   );
 }
 
