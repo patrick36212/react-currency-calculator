@@ -1,5 +1,5 @@
 html {
-  background-color: hsl(0, 0%, 95%);
+  background: url("currency-background.png");
   box-sizing: border-box;  
 }
 
