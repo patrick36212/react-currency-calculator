@@ -1,26 +1,17 @@
 import "./style.css"
 import { currencies } from "../currencies";
-import { useState } from "react";
 import Result from "../Result";
+import Footer from "../Footer";
 
-const Form = ({ calculateResult, result }) => {
-    const [amount, setAmount] = useState("");
-    const [currency, setCurrency] = useState(currencies[0].short);
-
-    const onFormSubmit = (event) => {
-        event.preventDefault();
-        calculateResult(amount, currency);
-    };
+const Form = () => {
 
     return (
-        <form className="form" onSubmit={onFormSubmit}>
+        <form className="form">
             <fieldset className="form__fieldset">
                 <p className="form__adnotation">Required fields mark *.</p>
                 <label className="form__label">
                     <span className="form__labelText">PLN Amount*: </span>
                     <input
-                        value={amount}
-                        onChange={(event) => setAmount(event.target.value)}
                         className="form__field"
                         type="number"
                         step="0.01"
@@ -33,8 +24,6 @@ const Form = ({ calculateResult, result }) => {
                     <select
                         className="form__field"
                         name="currency"
-                        value={currency}
-                        onChange={(event) => setCurrency(event.target.value)}
                     >
                         {currencies.map((currency) => (
                             <option
@@ -61,7 +50,10 @@ const Form = ({ calculateResult, result }) => {
                         Count
                     </button>
                 </div>
-                <Result result={result} />
+                <div className="result">
+                  Calculated result: <Result />
+                </div>
+                <Footer name="Patryk Krawczyk" year="2021" />
             </fieldset>
         </form>
     );
