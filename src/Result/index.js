@@ -4,9 +4,9 @@ const Result = ({ result }) => (
     <p className="result">
         {result !== undefined && (
             <>
-                {result.souceAmount.toFixed(2)}&nbsp;PLN&nbsp;={" "}
+                {result.sourceAmount.toFixed(2)}&nbsp;PLN&nbsp;={" "}
                 <strong>
-                    {result.targetAmount.toFixed(2)}&nbsp;{result.currency}
+                    {result.targetResult.toFixed(2)}&nbsp;{result.currency}
                 </strong>
             </>
         )}

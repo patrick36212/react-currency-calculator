@@ -2,20 +2,30 @@ import "./style.css"
 import { currencies } from "../currencies";
 import Result from "../Result";
 import Footer from "../Footer";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 
 const Form = () => {
 
     const [amount, setAmount] = useState("");
     const [currency, setCurrency] = useState(currencies[0].short);
-    const [rate, setRate] = useState(currencies[0].value);
+    // const [rate, setRate] = useState(currencies.find(({ short }) => short === currency).value);
+    const [result, setResult] = useState();
 
-    const toggleRate = () => {
-        setRate(currencies.find(({ short }) => short === currency).value);
+    const calculateResult = (amount, currency) => {
+
+        const rate = currencies.find(({ short }) => short === currency).value
+
+        setResult({
+            sourceAmount: +amount,
+            targetResult: amount / rate,
+            currency,
+        });
     };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
+        calculateResult(amount, currency);
+        setAmount("");
     };
 
     return (
@@ -31,7 +41,6 @@ const Form = () => {
                         type="number"
                         step="0.01"
                         required
-                        autoFocus
                     />
                 </label>
                 <label className="form__label">
@@ -47,21 +56,21 @@ const Form = () => {
                                 key={currency.short}
                                 value={currency.short}
                             >
-                                {currency.name}
+                                {currency.short}
                             </option>
                         ))}
                     </select>
                 </label>
-                <label className="form__label">
+                {/* <label className="form__label">
                     <span className="form__labelText">Exchange currency rate: </span>
                     <input
                         value={rate}
-                        onChange={({target}) => toggleRate(target.value)}
+                        onChange={({ target }) => setRate(target.value)}
                         className="form__field"
                         type="number"
                         readOnly
                     />
-                </label>
+                </label> */}
                 <div className="form__buttonContainer">
                     <button
                         className="form__button"
@@ -70,7 +79,7 @@ const Form = () => {
                     </button>
                 </div>
                 <div className="result">
-                    Calculated result: <Result />
+                    <Result calculateResult={calculateResult} result={result} />
                 </div>
                 <Footer name="Patryk Krawczyk" year="2021" />
             </fieldset>
