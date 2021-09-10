@@ -31,6 +31,7 @@ const Form = () => {
     return (
         <form className="form" onSubmit={onFormSubmit}>
             <fieldset className="form__fieldset">
+                <legend class="form__legend">Currency calculator</legend>
                 <p className="form__adnotation">Required fields mark *.</p>
                 <label className="form__label">
                     <span className="form__labelText">PLN Amount*: </span>
