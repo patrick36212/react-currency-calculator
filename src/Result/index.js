@@ -1,7 +1,7 @@
 import "./style.css"
 
 const Result = ({ result }) => (
-    <p className="result">
+    <p className="result__text">
         {result !== undefined && (
             <>
                 {result.sourceAmount.toFixed(2)}&nbsp;PLN&nbsp;={" "}
