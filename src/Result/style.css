@@ -1,7 +1,5 @@
 .result {
     margin: auto;
-    background-color: hsl(203, 92%, 50%);
-    border-radius: 5px;
     max-width: fit-content;
     transition: 1s;
 }
@@ -10,7 +8,9 @@
     margin: 0;
     color: hsl(0, 0%, 100%);
     padding: 10px;
-    font-size: 20px;   
+    font-size: 20px;
+    background-color: hsl(203, 92%, 50%);
+    border-radius: 5px;
 }
 
 .result:hover {
