@@ -1,6 +1,6 @@
 .form {
     margin: 0 auto;
-    max-width: 70%;
+    max-width: 65%;
 }
 
 @media (max-width: 767px) {
@@ -21,18 +21,18 @@
     padding: 10px;
 }
 
-.form__adnotation {
+.form__annotation {
     text-align: right;
     padding: 5px;
     color: hsl(0, 40%, 50%);
 }
 
 .form__label {
+    margin-bottom: 15px;
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    margin-bottom: 10px;
     justify-content: center;
+    gap: 10px;
 }
 
 @media (max-width: 767px) {
@@ -44,7 +44,7 @@
 .form__labelText {
     padding: 10px;
     max-width: 350px;
-    width: 50%;
+    width: 30%;
 }
 
 @media (max-width: 767px) {
@@ -54,7 +54,7 @@
 }
 
 .form__field {
-    width: 50%;
+    width: 40%;
     text-align: center;
     padding: 10px;
     border-radius: 5px;
@@ -76,10 +76,14 @@
     border: 1px solid hsl(0, 0%, 50%);
 }
 
+.form__field:disabled {
+    background-color: hsl(0, 0%, 100%);
+}
+
 .form__buttonContainer {
     display: flex;
     gap: 10px;
-    justify-content: right;
+    justify-content: flex-end;
     margin: 10px 0;
 }
 

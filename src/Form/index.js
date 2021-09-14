@@ -1,19 +1,19 @@
+import { useState } from "react";
+
 import "./style.css"
 import { currencies } from "../currencies";
 import Result from "../Result";
 import Footer from "../Footer";
-import { useState } from "react";
+
 
 const Form = () => {
 
     const [amount, setAmount] = useState("");
-    const [currency, setCurrency] = useState(currencies[0].short);
-    // const [rate, setRate] = useState(currencies.find(({ short }) => short === currency).value);
+    const [currency, setCurrency] = useState("EUR");
     const [result, setResult] = useState();
+    const rate = currencies[currency]
 
-    const calculateResult = (amount, currency) => {
-
-        const rate = currencies.find(({ short }) => short === currency).value
+    const calculateResult = (amount, currency) =>  {       
 
         setResult({
             sourceAmount: +amount,
@@ -32,16 +32,19 @@ const Form = () => {
         <form className="form" onSubmit={onFormSubmit}>
             <fieldset className="form__fieldset">
                 <legend className="form__legend">Currency calculator</legend>
-                <p className="form__adnotation">Required fields mark *.</p>
+                <p className="form__annotation">*Fields required</p>
                 <label className="form__label">
                     <span className="form__labelText">PLN Amount*: </span>
                     <input
+                        min="0.01"
                         value={amount}
                         onChange={({ target }) => setAmount(target.value)}
                         className="form__field"
                         type="number"
                         step="0.01"
                         required
+                        autoFocus
+                        placeholder="Write your amount"
                     />
                 </label>
                 <label className="form__label">
@@ -52,35 +55,34 @@ const Form = () => {
                         value={currency}
                         onChange={({ target }) => setCurrency(target.value)}
                     >
-                        {currencies.map((currency) => (
+                        {Object.keys(currencies).map(currency => (
                             <option
-                                key={currency.short}
-                                value={currency.short}
+                                key={currency}
+                                value={currency}
                             >
-                                {currency.short}
+                                {currency}
                             </option>
                         ))}
                     </select>
                 </label>
-                {/* <label className="form__label">
+                <label className="form__label">
                     <span className="form__labelText">Exchange currency rate: </span>
                     <input
                         value={rate}
-                        onChange={({ target }) => setRate(target.value)}
                         className="form__field"
                         type="number"
-                        readOnly
+                        disabled
                     />
-                </label> */}
+                </label>
                 <div className="form__buttonContainer">
                     <button
                         className="form__button"
                     >
-                        Count
+                        Calculate
                     </button>
                 </div>
                 <div className="result">
-                    <Result calculateResult={calculateResult} result={result} />
+                    <Result result={result} />
                 </div>
                 <Footer name="Patryk Krawczyk" year="2021" />
             </fieldset>
