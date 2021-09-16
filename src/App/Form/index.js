@@ -4,6 +4,7 @@ import "./style.css"
 import { currencies } from "../currencies";
 import Result from "./Result";
 import Footer from "../Footer";
+import Clock from "../Clock";
 
 
 const Form = () => {
@@ -32,6 +33,7 @@ const Form = () => {
         <form className="form" onSubmit={onFormSubmit}>
             <fieldset className="form__fieldset">
                 <legend className="form__legend">Currency calculator</legend>
+                <Clock />
                 <p className="form__annotation">*Fields required</p>
                 <label className="form__label">
                     <span className="form__labelText">PLN Amount*: </span>
