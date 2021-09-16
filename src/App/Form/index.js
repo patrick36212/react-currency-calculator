@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import "./style.css"
 import { currencies } from "../currencies";
-import Result from "../Result";
+import Result from "./Result";
 import Footer from "../Footer";
 
 
