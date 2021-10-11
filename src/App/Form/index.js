@@ -52,7 +52,7 @@ const Form = () => {
                     onChange={({ target }) => setTargetCurrency(target.value)}
                 />
                 <label className="form__label">
-                    <span className="form__labelText">PLN Amount*: </span>
+                    <span className="form__labelText">{ownedCurrency} Amount*: </span>
                     <input
                         min="0.01"
                         value={amount}
