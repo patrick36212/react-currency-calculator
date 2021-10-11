@@ -4,9 +4,9 @@ const Result = ({ result }) => (
 
     !!result && (
         <p className="result__text">
-            {result.sourceAmount.toFixed(2)}&nbsp;PLN&nbsp;={" "}
+            {result.sourceAmount.toFixed(2)}&nbsp;{result.ownedCurrency}&nbsp;={" "}
             <strong>
-                {result.targetResult.toFixed(2)}&nbsp;{result.currency}
+                {result.targetResult.toFixed(2)}&nbsp;{result.targetCurrency}
             </strong>
         </p>
     )
