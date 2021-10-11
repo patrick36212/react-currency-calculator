@@ -1,5 +1,4 @@
 import { currencies } from "../../currencies";
-import "./style.css";
 
 const Field = ({ fieldName, name, value, onChange }) => {
 
