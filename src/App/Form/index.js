@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect } from "react";
 
 import "./style.css";
 import { currencies } from "../currencies";
@@ -6,7 +7,6 @@ import Result from "./Result";
 import Footer from "../Footer";
 import Clock from "../Clock";
 import Field from "./Field";
-
 
 const Form = () => {
 
@@ -16,6 +16,10 @@ const Form = () => {
     const [targetCurrency, setTargetCurrency] = useState("EUR");
     const ownedRate = currencies[ownedCurrency];
     const targetRate = currencies[targetCurrency];
+
+    useEffect(() => {
+        document.title = `Calculate from ${ownedCurrency} to ${targetCurrency}`;
+    }, [ownedCurrency, targetCurrency]);
 
     const calculateResult = (amount, ownedRate, targetRate) => {
 
@@ -39,32 +43,34 @@ const Form = () => {
                 <legend className="form__legend">Currency calculator</legend>
                 <Clock />
                 <p className="form__annotation">*Fields required</p>
-                <Field
-                    fieldName={"Currency I have*: "}
-                    name={"currency"}
-                    value={ownedCurrency}
-                    onChange={({ target }) => setOwnedCurrency(target.value)}
-                />
-                <Field
-                    fieldName={"Currency I want*: "}
-                    name={"currency"}
-                    value={targetCurrency}
-                    onChange={({ target }) => setTargetCurrency(target.value)}
-                />
-                <label className="form__label">
-                    <span className="form__labelText">{ownedCurrency} Amount*: </span>
-                    <input
-                        min="0.01"
-                        value={amount}
-                        onChange={({ target }) => setAmount(target.value)}
-                        className="form__field"
-                        type="number"
-                        step="0.01"
-                        required
-                        autoFocus
-                        placeholder="Write your amount"
+                <div className="form__labelContainer">
+                    <Field
+                        fieldName={"From*: "}
+                        name={"currency"}
+                        value={ownedCurrency}
+                        onChange={({ target }) => setOwnedCurrency(target.value)}
                     />
-                </label>
+                    <Field
+                        fieldName={"To*: "}
+                        name={"currency"}
+                        value={targetCurrency}
+                        onChange={({ target }) => setTargetCurrency(target.value)}
+                    />
+                    <label className="form__label">
+                        <span className="form__labelText">{ownedCurrency} Amount*: </span>
+                        <input
+                            min="0.01"
+                            value={amount}
+                            onChange={({ target }) => setAmount(target.value)}
+                            className="form__field"
+                            type="number"
+                            step="0.01"
+                            required
+                            autoFocus
+                            placeholder="Write your amount"
+                        />
+                    </label>
+                </div>
                 <div className="form__buttonContainer">
                     <button
                         className="form__button"
