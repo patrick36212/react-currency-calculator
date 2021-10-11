@@ -1,31 +1,35 @@
 import { useState } from "react";
 
-import "./style.css"
+import "./style.css";
 import { currencies } from "../currencies";
 import Result from "./Result";
 import Footer from "../Footer";
 import Clock from "../Clock";
+import Field from "./Field";
 
 
 const Form = () => {
 
     const [amount, setAmount] = useState("");
-    const [currency, setCurrency] = useState("EUR");
     const [result, setResult] = useState();
-    const rate = currencies[currency]
+    const [ownedCurrency, setOwnedCurrency] = useState("USD");
+    const [targetCurrency, setTargetCurrency] = useState("EUR");
+    const ownedRate = currencies[ownedCurrency];
+    const targetRate = currencies[targetCurrency];
 
-    const calculateResult = (amount, currency) =>  {       
+    const calculateResult = (amount, ownedRate, targetRate) => {
 
         setResult({
             sourceAmount: +amount,
-            targetResult: amount / rate,
-            currency,
+            targetResult: amount * (ownedRate / targetRate),
+            ownedCurrency,
+            targetCurrency,
         });
     };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        calculateResult(amount, currency);
+        calculateResult(amount, ownedRate, targetRate);
         setAmount("");
     };
 
@@ -35,6 +39,18 @@ const Form = () => {
                 <legend className="form__legend">Currency calculator</legend>
                 <Clock />
                 <p className="form__annotation">*Fields required</p>
+                <Field
+                    fieldName={"Currency I have*: "}
+                    name={"currency"}
+                    value={ownedCurrency}
+                    onChange={({ target }) => setOwnedCurrency(target.value)}
+                />
+                <Field
+                    fieldName={"Currency I want*: "}
+                    name={"currency"}
+                    value={targetCurrency}
+                    onChange={({ target }) => setTargetCurrency(target.value)}
+                />
                 <label className="form__label">
                     <span className="form__labelText">PLN Amount*: </span>
                     <input
@@ -47,33 +63,6 @@ const Form = () => {
                         required
                         autoFocus
                         placeholder="Write your amount"
-                    />
-                </label>
-                <label className="form__label">
-                    <span className="form__labelText">Exchange currency*: </span>
-                    <select
-                        className="form__field"
-                        name="currency"
-                        value={currency}
-                        onChange={({ target }) => setCurrency(target.value)}
-                    >
-                        {Object.keys(currencies).map(currency => (
-                            <option
-                                key={currency}
-                                value={currency}
-                            >
-                                {currency}
-                            </option>
-                        ))}
-                    </select>
-                </label>
-                <label className="form__label">
-                    <span className="form__labelText">Exchange currency rate: </span>
-                    <input
-                        value={rate}
-                        className="form__field"
-                        type="number"
-                        disabled
                     />
                 </label>
                 <div className="form__buttonContainer">
