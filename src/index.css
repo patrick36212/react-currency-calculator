@@ -1,10 +1,17 @@
-html {
-  background: url("currency-background.png");
-  box-sizing: border-box;  
-}
-
 *, ::after, ::before {
   box-sizing: inherit;
+}
+
+#root {
+  background: url("currency-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  box-sizing: border-box; 
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body {

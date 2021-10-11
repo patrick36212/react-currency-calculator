@@ -9,10 +9,7 @@
     color: hsl(0, 0%, 100%);
     padding: 10px;
     font-size: 20px;
-    background-color: hsl(203, 92%, 50%);
-    border-radius: 5px;
-}
-
-.result:hover {
-    transform: scale(1.25);
+    background: var(--dark-blue-gradient);
+    border-radius: 30px;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
 }
