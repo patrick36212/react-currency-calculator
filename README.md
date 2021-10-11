@@ -4,10 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - Author: Patryk Krawczyk
 - Created: 10-09-2021
+- Upadate: 11-10-2021
 
 ## Preview and demo
 
-![gif](cc-gif.gif)
+![gif](currency-calculator.gif)
 Here you can find -> [**Demo**](https://patrick36212.github.io/react-currency-calculator/)
 
 ## Technologies used in project
@@ -23,13 +24,15 @@ Here you can find -> [**Demo**](https://patrick36212.github.io/react-currency-ca
 - `Babel`
 - `React`
 - `useState`
+- `useEffect`
 
 ## Functionality
 
-1. Write down amount of PLN you want to exchange in `PLN Amount` input area
+1. Choose your currency
 2. Choose currency to exchange
-3. Press `Count` button
-4. Your result is showing below
+3. Press `Calculate` button
+4. Write down amount, you want to exchange in `Amount` input area
+5. Your result is showing below
    
    Currencies rates:
    - EUR = 4.4278
