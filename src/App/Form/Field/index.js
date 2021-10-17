@@ -1,12 +1,13 @@
 import { currencies } from "../../currencies";
+import { StyledFormField, StyledLabel, StyledLabelText } from "./styled";
 
-const Field = ({ fieldName, name, value, onChange }) => {
+export const Select = ({ fieldName, name, value, onChange }) => {
 
     return (
-        <label className="form__label">
-            <span className="form__labelText">{fieldName}</span>
-            <select
-                className="form__field"
+        <StyledLabel>
+            <StyledLabelText>{fieldName}</StyledLabelText>
+            <StyledFormField 
+                as="select"
                 name={name}
                 value={value}
                 onChange={onChange}
@@ -19,9 +20,26 @@ const Field = ({ fieldName, name, value, onChange }) => {
                         {currency}
                     </option>
                 ))}
-            </select>
-        </label>
+            </StyledFormField>
+        </StyledLabel>
     );
 };
 
-export default Field;
+export const Input = ({ fieldName, value, onChange }) => {
+    return (
+        <StyledLabel>
+            <StyledLabelText>{fieldName}</StyledLabelText>
+            <StyledFormField
+                min="0.01"
+                value={value}
+                onChange={onChange}
+                type="number"
+                step="0.01"
+                required
+                placeholder="Write your amount"
+            >
+            </StyledFormField>
+        </StyledLabel>
+    );
+
+};
