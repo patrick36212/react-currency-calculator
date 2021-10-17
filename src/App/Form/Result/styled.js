@@ -1,10 +1,6 @@
-.result {
-    margin: auto;
-    max-width: fit-content;
-    transition: 1s;
-}
+import styled from "styled-components";
 
-.result__text {
+export const StyledResult = styled.p`
     margin: 0;
     color: hsl(0, 0%, 100%);
     padding: 10px;
@@ -12,4 +8,4 @@
     background: var(--dark-blue-gradient);
     border-radius: 30px;
     box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
-}
+`;
