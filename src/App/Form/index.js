@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useEffect } from "react";
 
-import "./style.css";
-import { currencies } from "../currencies";
+import { currencies } from "./currencies";
 import Result from "./Result";
 import Footer from "../Footer";
 import Clock from "../Clock";
-import Field from "./Field";
+import { Select, Input } from "./Field";
+import { StyledAnnotatnion, StyledLegend, StyledWrapper, StyledButton, StyledFieldset } from "./styled";
 
 const Form = () => {
 
@@ -38,51 +38,38 @@ const Form = () => {
     };
 
     return (
-        <form className="form" onSubmit={onFormSubmit}>
-            <fieldset className="form__fieldset">
-                <legend className="form__legend">Currency calculator</legend>
+        <form onSubmit={onFormSubmit}>
+            <StyledFieldset>
+                <StyledLegend>Currency calculator</StyledLegend>
                 <Clock />
-                <p className="form__annotation">*Fields required</p>
-                <div className="form__labelContainer">
-                    <Field
+                <StyledAnnotatnion className="form__annotation">*Fields required</StyledAnnotatnion>
+                <StyledWrapper>
+                    <Select
                         fieldName={"From*: "}
                         name={"currency"}
                         value={ownedCurrency}
                         onChange={({ target }) => setOwnedCurrency(target.value)}
                     />
-                    <Field
+                    <Select
                         fieldName={"To*: "}
                         name={"currency"}
                         value={targetCurrency}
                         onChange={({ target }) => setTargetCurrency(target.value)}
                     />
-                    <label className="form__label">
-                        <span className="form__labelText">{ownedCurrency} Amount*: </span>
-                        <input
-                            min="0.01"
-                            value={amount}
-                            onChange={({ target }) => setAmount(target.value)}
-                            className="form__field"
-                            type="number"
-                            step="0.01"
-                            required
-                            autoFocus
-                            placeholder="Write your amount"
-                        />
-                    </label>
-                </div>
-                <div className="form__buttonContainer">
-                    <button
-                        className="form__button"
-                    >
-                        Calculate
-                    </button>
-                </div>
-                <div className="result">
+                    <Input
+                        fieldName={`${ownedCurrency} Amount*: `}
+                        value={amount}
+                        onChange={({ target }) => setAmount(target.value)}
+                    />
+                </StyledWrapper>
+                <StyledWrapper button>
+                    <StyledButton>Calculate</StyledButton>
+                </StyledWrapper>
+                <StyledWrapper result>
                     <Result result={result} />
-                </div>
+                </StyledWrapper>
                 <Footer name="Patryk Krawczyk" year="2021" />
-            </fieldset>
+            </StyledFieldset>
         </form>
     );
 };
