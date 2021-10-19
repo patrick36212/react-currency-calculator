@@ -1,4 +1,4 @@
-import { currencies } from "../../currencies";
+import { currencies } from "../currencies";
 import { StyledFormField, StyledLabel, StyledLabelText } from "./styled";
 
 export const Select = ({ fieldName, name, value, onChange }) => {
