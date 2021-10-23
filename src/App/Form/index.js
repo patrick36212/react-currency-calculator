@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useEffect } from "react";
-
 import { currencies } from "./currencies";
-import Result from "./Result";
-import Footer from "../Footer";
-import Clock from "../Clock";
 import { Select, Input } from "./Field";
 import { StyledAnnotatnion, StyledLegend, StyledWrapper, StyledButton, StyledFieldset } from "./styled";
+
+import Result from "./Result";
+import Footer from "./Footer";
+import Clock from "./Clock";
+
 
 const Form = () => {
 
