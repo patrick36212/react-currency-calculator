@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export const dateFormat = (date) =>
+export const formatDate = (date) =>
     date.toLocaleString("en-GB", {
         weekday: "long",
         hour: "numeric",

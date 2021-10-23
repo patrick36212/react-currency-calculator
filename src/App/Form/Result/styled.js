@@ -5,7 +5,7 @@ export const StyledResult = styled.p`
     color: hsl(0, 0%, 100%);
     padding: 10px;
     font-size: 20px;
-    background: var(--dark-blue-gradient);
+    background: ${({ theme }) => theme.color.prussianblue};
     border-radius: 30px;
-    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    box-shadow: 20px 20px 60px ${({ theme }) => theme.color.grayweb}, -20px -20px 60px ${({ theme }) => theme.color.white};;
 `;

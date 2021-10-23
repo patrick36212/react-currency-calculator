@@ -1,12 +1,12 @@
 import { StyledClock } from "./styled";
-import { dateFormat, useCurrentDate } from "./useLocalCurrentDate";
+import { formatDate, useCurrentDate } from "./useLocalCurrentDate";
 
 const Clock = () => {
     const date = useCurrentDate();
 
     return (
         <StyledClock>
-            {`${dateFormat(date)}`}
+            {formatDate(date)}
         </StyledClock>
     );
 };

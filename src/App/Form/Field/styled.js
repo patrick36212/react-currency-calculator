@@ -6,7 +6,7 @@ export const StyledLabel = styled.label`
     grid-template-rows: repeat(2, 1fr);
     gap: 10px;
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         flex-direction: column;
     }
 `;
@@ -16,7 +16,7 @@ export const StyledLabelText = styled.span`
     padding: 10px;
     max-width: 350px;
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         width: 100%;
     }
 `;
@@ -26,18 +26,18 @@ export const StyledFormField = styled.input`
     padding: 10px;
     border-radius: 30px;
     border: none;
-    background: linear-gradient(145deg, #cacaca, #f0f0f0);
-    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    background: ${({ theme }) => theme.color.white};
+    box-shadow: 20px 20px 60px ${({ theme }) => theme.color.grayweb}, -20px -20px 60px ${({ theme }) => theme.color.white};
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         width: 100%;
     }
 
     &:required {
-        border: 1px solid hsl(0, 53%, 90%);
-        background: linear-gradient(145deg, hsl(0, 70%, 90%), hsl(0, 53%, 90%));
+        border: 1px solid ${({ theme }) => theme.color.pink};
+        background: ${({ theme }) => theme.color.pink};
     }
     &:required:hover {
-        border: 1px solid hsl(0, 0%, 50%);
+        border: 1px solid ${({ theme }) => theme.color.black};
     }
 `;

@@ -2,22 +2,21 @@ import styled, { css } from "styled-components";
 
 export const StyledFieldset = styled.fieldset`
     border-radius: 20px;
-    background: hsl(0, 0%, 96%);
-    box-shadow: -5px -5px 40px hsl(0, 0%, 45%), 5px 5px 40px hsl(0, 0%, 65%);;
+    background: ${({ theme }) => theme.color.white};
     border: none;
 `;
 
 export const StyledLegend = styled.legend`
-    background: var(--dark-blue-gradient);
+    background: ${({ theme }) => theme.color.prussianblue};
     border-radius: 30px;
-    color: hsl(0, 0%, 96%);
+    color: ${({ theme }) => theme.color.white};
     padding: 10px;
 `;
 
 export const StyledAnnotatnion = styled.p`
     text-align: right;
     padding: 5px;
-    color: hsl(0, 40%, 50%);
+    color: ${({ theme }) => theme.color.rubyred};
 `;
 
 export const StyledWrapper = styled.div`
@@ -26,13 +25,13 @@ export const StyledWrapper = styled.div`
     grid-gap: 10px;
     margin: 10px 0;
 
-    ${({button}) => button && css`
-    justify-items: end;
+    ${({ button }) => button && css`
+        justify-items: end;
     `}
 
-    ${({result}) => result && css`
-    max-width: fit-content;
-    margin: 5px auto;
+    ${({ result }) => result && css`
+        max-width: fit-content;
+        margin: 5px auto;
     `}
 
     @media (max-width: 767px) {
@@ -44,20 +43,20 @@ export const StyledButton = styled.button`
     padding: 10px;
     max-width: 163px;
     width: 100%;
-    color: hsl(203, 92%, 20%);
+    color: ${({ theme }) => theme.color.prussianblue};
     background: transparent;
     cursor: pointer;
     transition: ease-out 0.5s;
     border-radius: 30px;
-    border: 2px solid hsl(203, 92%, 40%);
+    border: 2px solid ${({ theme }) => theme.color.prussianblue};
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         margin-bottom: 10px;
     }
 
     &:hover {
-        color: white;
-        box-shadow: inset 0 -100px 0 0 hsl(203, 92%, 40%);
+        color: ${({ theme }) => theme.color.white};
+        box-shadow: inset 0 -100px 0 0 ${({ theme }) => theme.color.prussianblue};
     }
 
     &:active {
