@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - Author: Patryk Krawczyk
 - Created: 10-09-2021
-- Upadate: 11-10-2021
+- Upadate: 23-10-2021
 
 ## Preview and demo
 
@@ -16,15 +16,18 @@ Here you can find -> [**Demo**](https://patrick36212.github.io/react-currency-ca
 - `HTML`
 - `BEM`
 - `CSS`
-- `Flex`
+- `Flex/Grid`
 - `Transition`
 - `Media query`
 - `JS/ES6+`
 - `Immiutability`
 - `Babel`
 - `React`
+- `Styled Components`
+- `GlobalStyles & Theme`
 - `useState`
 - `useEffect`
+- `Custom Hooks`
 
 ## Functionality
 
