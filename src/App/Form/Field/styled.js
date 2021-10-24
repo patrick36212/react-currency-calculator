@@ -33,6 +33,10 @@ export const StyledFormField = styled.input`
         width: 100%;
         background: ${({ theme }) => theme.color.grayweb};
         color: ${({ theme }) => theme.color.white};
+
+        &:required {
+            color: ${({ theme }) => theme.color.black};
+        }
     }
 
     &:required {
