@@ -27,10 +27,12 @@ export const StyledFormField = styled.input`
     border-radius: 30px;
     border: none;
     background: ${({ theme }) => theme.color.white};
-    box-shadow: 20px 20px 60px ${({ theme }) => theme.color.grayweb}, -20px -20px 60px ${({ theme }) => theme.color.white};
+    box-shadow: 20px 20px 60px ${({ theme }) => theme.color.grayweb};
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         width: 100%;
+        background: ${({ theme }) => theme.color.grayweb};
+        color: ${({ theme }) => theme.color.white};
     }
 
     &:required {
