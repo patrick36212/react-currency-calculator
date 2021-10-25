@@ -1,7 +1,6 @@
-import { currencies } from "../currencies";
 import { StyledFormField, StyledLabel, StyledLabelText } from "./styled";
 
-export const Select = ({ fieldName, name, value, onChange }) => {
+export const Select = ({ fieldName, name, value, onChange, object }) => {
 
     return (
         <StyledLabel>
@@ -12,14 +11,7 @@ export const Select = ({ fieldName, name, value, onChange }) => {
                 value={value}
                 onChange={onChange}
             >
-                {Object.keys(currencies).map(currency => (
-                    <option
-                        key={currency}
-                        value={currency}
-                    >
-                        {currency}
-                    </option>
-                ))}
+                {object}
             </StyledFormField>
         </StyledLabel>
     );
