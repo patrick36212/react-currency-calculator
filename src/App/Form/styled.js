@@ -7,7 +7,7 @@ export const StyledFieldset = styled.fieldset`
 `;
 
 export const StyledLegend = styled.legend`
-    background: ${({ theme }) => theme.color.prussianblue};
+    background: ${({ theme }) => theme.color.blue};
     border-radius: 30px;
     color: ${({ theme }) => theme.color.white};
     padding: 10px;
@@ -16,7 +16,7 @@ export const StyledLegend = styled.legend`
 export const StyledAnnotatnion = styled.p`
     text-align: right;
     padding: 5px;
-    color: ${({ theme }) => theme.color.rubyred};
+    color: ${({ theme }) => theme.color.red};
 `;
 
 export const StyledWrapper = styled.div`
@@ -43,12 +43,12 @@ export const StyledButton = styled.button`
     padding: 10px;
     max-width: 163px;
     width: 100%;
-    color: ${({ theme }) => theme.color.prussianblue};
+    color: ${({ theme }) => theme.color.blue};
     background: transparent;
     cursor: pointer;
     transition: ease-out 0.5s;
     border-radius: 30px;
-    border: 2px solid ${({ theme }) => theme.color.prussianblue};
+    border: 2px solid ${({ theme }) => theme.color.blue};
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         margin-bottom: 10px;
@@ -56,7 +56,7 @@ export const StyledButton = styled.button`
 
     &:hover {
         color: ${({ theme }) => theme.color.white};
-        box-shadow: inset 0 -100px 0 0 ${({ theme }) => theme.color.prussianblue};
+        box-shadow: inset 0 -100px 0 0 ${({ theme }) => theme.color.blue};
     }
 
     &:active {

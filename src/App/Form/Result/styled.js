@@ -5,7 +5,7 @@ export const StyledResult = styled.p`
     color: hsl(0, 0%, 100%);
     padding: 10px;
     font-size: 20px;
-    background: ${({ theme }) => theme.color.prussianblue};
+    background: ${({ theme }) => theme.color.blue};
     border-radius: 30px;
-    box-shadow: 20px 20px 60px ${({ theme }) => theme.color.grayweb};
+    box-shadow: 20px 20px 60px ${({ theme }) => theme.color.gray};
 `;

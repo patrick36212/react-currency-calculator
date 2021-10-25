@@ -1,11 +1,11 @@
 export const theme = {
     color: {
         black: "#000",
-        grayweb: "#7d7c7aff",
-        white: "#fefcfdff",
-        rubyred: "#a4031fff",
-        prussianblue: "#102b3fff",
-        pink: "#ffc8dd",
+        gray: "#6A6262",
+        white: "#fff",
+        red: "#FE4A49",
+        blue: "#0353A4",
+        pink: "#E5B4BB",
     },
     breakpoint: {
         mobileMax: 767,
