@@ -1,22 +1,24 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { currencies } from "./currencies";
 import { Select, Input } from "./Field";
 import { StyledAnnotatnion, StyledLegend, StyledWrapper, StyledButton, StyledFieldset } from "./styled";
 
 import Result from "./Result";
 import Footer from "./Footer";
 import Clock from "./Clock";
+import { useRatesData } from "./useRates";
 
 
 const Form = () => {
+
+    const ratesData = useRatesData();
 
     const [amount, setAmount] = useState("");
     const [result, setResult] = useState();
     const [ownedCurrency, setOwnedCurrency] = useState("USD");
     const [targetCurrency, setTargetCurrency] = useState("EUR");
-    const ownedRate = currencies[ownedCurrency];
-    const targetRate = currencies[targetCurrency];
+    const ownedRate = ratesData.rates[ownedCurrency];
+    const targetRate = ratesData.rates[targetCurrency];
 
     useEffect(() => {
         document.title = `Calculate from ${ownedCurrency} to ${targetCurrency}`;
