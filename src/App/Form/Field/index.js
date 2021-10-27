@@ -1,7 +1,7 @@
 import { useRatesData } from "../useRates";
 import { StyledFormField, StyledLabel, StyledLabelText } from "./styled";
 
-export const Select = ({ fieldName, name, value, onChange, object }) => {
+export const Select = ({ fieldName, name, value, onChange }) => {
 
     const ratesData = useRatesData();
 
@@ -14,7 +14,7 @@ export const Select = ({ fieldName, name, value, onChange, object }) => {
                 value={value}
                 onChange={onChange}
             >
-                {Object.keys(ratesData.rates).map(currency => (
+                {!!ratesData.rates && Object.keys(ratesData.rates).map((currency) => (
                     <option
                         key={currency}
                         value={currency}
