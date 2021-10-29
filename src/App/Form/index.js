@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { Select, Input } from "./Field";
-import { StyledAnnotatnion, StyledLegend, StyledWrapper, StyledButton, StyledFieldset } from "./styled";
+import { StyledAnnotatnion, StyledHeader, StyledWrapper, StyledButton, StyledFieldset } from "./styled";
 
 import Result from "./Result";
 import Footer from "./Footer";
 import Clock from "./Clock";
 import { useRatesData } from "./useRates";
+import Info from "./Info";
+import Loading from "./Info/Loading";
+import Failed from "./Info/Failed";
 
 
 const Form = () => {
@@ -15,16 +18,16 @@ const Form = () => {
 
     const [amount, setAmount] = useState("");
     const [result, setResult] = useState();
-    const [ownedCurrency, setOwnedCurrency] = useState("USD");
-    const [targetCurrency, setTargetCurrency] = useState("EUR");
-    const ownedRate = ratesData.rates[ownedCurrency];
-    const targetRate = ratesData.rates[targetCurrency];
+    const [ownedCurrency, setOwnedCurrency] = useState("EUR");
+    const [targetCurrency, setTargetCurrency] = useState("USD");
 
     useEffect(() => {
         document.title = `Calculate from ${ownedCurrency} to ${targetCurrency}`;
     }, [ownedCurrency, targetCurrency]);
 
-    const calculateResult = (amount, ownedRate, targetRate) => {
+    const calculateResult = (amount) => {
+        const ownedRate = ratesData.rates[ownedCurrency];
+        const targetRate = ratesData.rates[targetCurrency];
 
         setResult({
             sourceAmount: +amount,
@@ -34,7 +37,7 @@ const Form = () => {
         });
     };
 
-    const onFormSubmit = (event) => {
+    const onFormSubmit = (event, ownedRate, targetRate) => {
         event.preventDefault();
         calculateResult(amount, ownedRate, targetRate);
         setAmount("");
@@ -43,8 +46,12 @@ const Form = () => {
     return (
         <form onSubmit={onFormSubmit}>
             <StyledFieldset>
-                <StyledLegend>Currency calculator</StyledLegend>
                 <Clock />
+                <StyledHeader>Currency calculator</StyledHeader>
+                {ratesData.state === "loading" && (<Info textInfo={"Loadnig current exchange rates from European Central Bank."} loading={<Loading />}/>)}
+                {ratesData.state === "error" && (<Info textInfo={`Sorry, something went wrong. Check you Internet connection. If it's ok, the error in on our side.`} additionalInfo={`You may refresh the page or try again later.`} error failed={<Failed />} />)}
+                {ratesData.state === "success" && (
+                <>
                 <StyledAnnotatnion className="form__annotation">*Fields required</StyledAnnotatnion>
                 <StyledWrapper>
                     <Select
@@ -71,6 +78,7 @@ const Form = () => {
                 <StyledWrapper result>
                     <Result result={result} />
                 </StyledWrapper>
+                </> )}
                 <Footer name="Patryk Krawczyk" year="2021" />
             </StyledFieldset>
         </form>

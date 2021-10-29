@@ -6,11 +6,11 @@ export const StyledFieldset = styled.fieldset`
     border: none;
 `;
 
-export const StyledLegend = styled.legend`
-    background: ${({ theme }) => theme.color.blue};
-    border-radius: 30px;
-    color: ${({ theme }) => theme.color.white};
+export const StyledHeader = styled.h1`
+    color: ${({ theme }) => theme.color.blue};
     padding: 10px;
+    text-align: center;
+    margin: 0;
 `;
 
 export const StyledAnnotatnion = styled.p`
