@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - Author: Patryk Krawczyk
 - Created: 10-09-2021
-- Upadate: 23-10-2021
+- Upadate: 29-10-2021
 
 ## Preview and demo
 
@@ -28,20 +28,20 @@ Here you can find -> [**Demo**](https://patrick36212.github.io/react-currency-ca
 - `useState`
 - `useEffect`
 - `Custom Hooks`
+- `Axios`
+- `promises`
+- `API`
 
 ## Functionality
 
 1. Choose your currency
 2. Choose currency to exchange
-3. Press `Calculate` button
-4. Write down amount, you want to exchange in `Amount` input area
+3. Write down amount, you want to exchange in `Amount` input area
+4. Press `Calculate` button
 5. Your result is showing below
+
+Currencies are loaded from European Central Bank
    
-   Currencies rates:
-   - EUR = 4.4278
-   - CHF = 4.2525
-   - USD = 3.9012
-   - GPB = 5.3782
 ## Available Scripts
 
 In the project directory, you can run:
