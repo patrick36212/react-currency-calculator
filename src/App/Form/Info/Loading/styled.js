@@ -1,19 +1,5 @@
 import styled from "styled-components";
 
-export const StyledContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
-    background-color: ${({ theme }) => theme.color.white};
-    border-radius: 30px;
-    padding: 10px;
-`;
-
-export const StyledInfo = styled.p`
-    font-weight: bold;
-`;
-
 export const LoadingBar = styled.div`
     width: 3.5em;
     display: flex;
@@ -35,7 +21,7 @@ export const Dot = styled.div`
     width: 0.8em;
     height: 0.8em;
     border-radius: 50%;
-    background-color: #fc2f70;
+    background-color: ${({theme}) => theme.color.red};
     animation: fade 0.8s ease-in-out alternate infinite;
 
     &:nth-of-type(1) {
