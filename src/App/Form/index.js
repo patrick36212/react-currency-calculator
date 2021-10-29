@@ -48,37 +48,40 @@ const Form = () => {
             <StyledFieldset>
                 <Clock />
                 <StyledHeader>Currency calculator</StyledHeader>
-                {ratesData.state === "loading" && (<Info textInfo={"Loadnig current exchange rates from European Central Bank."} loading={<Loading />}/>)}
+                {ratesData.state === "loading" && (<Info textInfo={"Loadnig current exchange rates from European Central Bank."} loading={<Loading />} />)}
                 {ratesData.state === "error" && (<Info textInfo={`Sorry, something went wrong. Check you Internet connection. If it's ok, the error in on our side.`} additionalInfo={`You may refresh the page or try again later.`} error failed={<Failed />} />)}
                 {ratesData.state === "success" && (
-                <>
-                <StyledAnnotatnion className="form__annotation">*Fields required</StyledAnnotatnion>
-                <StyledWrapper>
-                    <Select
-                        fieldName={"From*: "}
-                        name={"currency"}
-                        value={ownedCurrency}
-                        onChange={({ target }) => setOwnedCurrency(target.value)}
-                    />
-                    <Select
-                        fieldName={"To*: "}
-                        name={"currency"}
-                        value={targetCurrency}
-                        onChange={({ target }) => setTargetCurrency(target.value)}
-                    />
-                    <Input
-                        fieldName={`${ownedCurrency} Amount*: `}
-                        value={amount}
-                        onChange={({ target }) => setAmount(target.value)}
-                    />
-                </StyledWrapper>
-                <StyledWrapper button>
-                    <StyledButton>Calculate</StyledButton>
-                </StyledWrapper>
-                <StyledWrapper result>
-                    <Result result={result} />
-                </StyledWrapper>
-                </> )}
+                    <>
+                        <StyledAnnotatnion>*Fields required</StyledAnnotatnion>
+                        <StyledWrapper>
+                            <Select
+                                fieldName={"From*: "}
+                                name={"currency"}
+                                value={ownedCurrency}
+                                onChange={({ target }) => setOwnedCurrency(target.value)}
+                            />
+                            <Select
+                                fieldName={"To*: "}
+                                name={"currency"}
+                                value={targetCurrency}
+                                onChange={({ target }) => setTargetCurrency(target.value)}
+                            />
+                            <Input
+                                fieldName={`${ownedCurrency} Amount*: `}
+                                value={amount}
+                                onChange={({ target }) => setAmount(target.value)}
+                            />
+                        </StyledWrapper>
+                        <StyledWrapper button>
+                            <StyledButton>Calculate</StyledButton>
+                        </StyledWrapper>
+                        <StyledWrapper result>
+                            <Result result={result} />
+                        </StyledWrapper>
+                    </>)}
+                <StyledAnnotatnion date >
+                    Exchange rates valid as of: {ratesData.date}
+                </StyledAnnotatnion>
                 <Footer name="Patryk Krawczyk" year="2021" />
             </StyledFieldset>
         </form>
