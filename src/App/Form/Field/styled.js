@@ -31,6 +31,8 @@ export const StyledFormField = styled.input`
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         width: 100%;
+        border: 1px solid ${({theme}) => theme.color.black};
+        text-align: center;
     }
 
     &:required {

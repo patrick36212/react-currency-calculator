@@ -11,7 +11,6 @@ import Info from "./Info";
 import Loading from "./Info/Loading";
 import Failed from "./Info/Failed";
 
-
 const Form = () => {
 
     const ratesData = useRatesData();
@@ -78,10 +77,13 @@ const Form = () => {
                         <StyledWrapper result>
                             <Result result={result} />
                         </StyledWrapper>
+                        <StyledAnnotatnion date >
+                            Exchange rates valid as of:<br />
+                            <strong>
+                                {ratesData.date}
+                            </strong>
+                        </StyledAnnotatnion>
                     </>)}
-                <StyledAnnotatnion date >
-                    Exchange rates valid as of: {ratesData.date}
-                </StyledAnnotatnion>
                 <Footer name="Patryk Krawczyk" year="2021" />
             </StyledFieldset>
         </form>
