@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/react-currency-calculator/static/js/main.19021063.chunk.js",
-    "main.js.map": "/react-currency-calculator/static/js/main.19021063.chunk.js.map",
+    "main.js": "/react-currency-calculator/static/js/main.61de90ad.chunk.js",
+    "main.js.map": "/react-currency-calculator/static/js/main.61de90ad.chunk.js.map",
     "runtime-main.js": "/react-currency-calculator/static/js/runtime-main.88efdbf1.js",
     "runtime-main.js.map": "/react-currency-calculator/static/js/runtime-main.88efdbf1.js.map",
     "static/js/2.5ce3c6bd.chunk.js": "/react-currency-calculator/static/js/2.5ce3c6bd.chunk.js",
@@ -15,6 +15,6 @@
   "entrypoints": [
     "static/js/runtime-main.88efdbf1.js",
     "static/js/2.5ce3c6bd.chunk.js",
-    "static/js/main.19021063.chunk.js"
+    "static/js/main.61de90ad.chunk.js"
   ]
 }
