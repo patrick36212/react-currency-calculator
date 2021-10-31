@@ -35,10 +35,13 @@ export const StyledFormField = styled.input`
     }
 
     &:required {
-        border: 1px solid ${({ theme }) => theme.color.pink};
-        background: ${({ theme }) => theme.color.pink};
+        border: 1px solid ${({ theme }) => theme.color.white};
+        background: ${({ theme }) => theme.color.white};
     }
     &:required:hover {
         border: 1px solid ${({ theme }) => theme.color.black};
+    }
+    &:invalid{
+        background: ${({theme}) => theme.color.pink}
     }
 `;
