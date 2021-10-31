@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 
 export const useRatesData = () => {
 
+  caches.keys();
+
   const [ratesData, setRatesData] = useState({
     state: "loading",
   })
@@ -10,7 +12,15 @@ export const useRatesData = () => {
   useEffect(() => {
     const getRates = async () => {
       try {
-        const response = await axios.get("https://api.exchangerate.host/latest");
+
+        const response = await axios.get("https://api.exchangerate.host/latest", {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache',
+            'Expires': '0',
+          },
+        });
 
         const { rates, date } = await response.data;
 
@@ -25,7 +35,7 @@ export const useRatesData = () => {
         });
       }
     };
-    setTimeout(getRates, 1000);
+    setTimeout(getRates, 2_000);
   }, []);
 
   return ratesData;
