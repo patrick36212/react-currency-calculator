@@ -58,12 +58,28 @@ const Form = () => {
                                 name={"currency"}
                                 value={ownedCurrency}
                                 onChange={({ target }) => setOwnedCurrency(target.value)}
+                                option={!!ratesData.rates && Object.keys(ratesData.rates).map((currency) => (
+                                    <option
+                                        key={currency}
+                                        value={currency}
+                                    >
+                                        {currency}
+                                    </option>
+                                ))}
                             />
                             <Select
                                 fieldName={"To*: "}
                                 name={"currency"}
                                 value={targetCurrency}
                                 onChange={({ target }) => setTargetCurrency(target.value)}
+                                option={!!ratesData.rates && Object.keys(ratesData.rates).map((currency) => (
+                                    <option
+                                        key={currency}
+                                        value={currency}
+                                    >
+                                        {currency}
+                                    </option>
+                                ))}
                             />
                             <Input
                                 fieldName={`${ownedCurrency} Amount*: `}
