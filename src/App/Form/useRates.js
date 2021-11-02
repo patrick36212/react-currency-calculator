@@ -13,7 +13,7 @@ export const useRatesData = () => {
     const getRates = async () => {
       try {
 
-        const response = await axios.get("https://api.exchangerate.host/latest");
+        const response = await axios.get(`https://api.exchangerate.host/latest=${new Date().getTime()}`);
 
         const { rates, date } = await response.data;
 
