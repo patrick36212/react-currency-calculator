@@ -13,11 +13,14 @@ import Failed from "./Info/Failed";
 
 const Form = () => {
 
-    const ratesData = useRatesData();
+    const {
+        ratesData,
+        ownedCurrency,
+        setOwnedCurrency,
+      } = useRatesData();
 
     const [amount, setAmount] = useState("");
     const [result, setResult] = useState();
-    const [ownedCurrency, setOwnedCurrency] = useState("EUR");
     const [targetCurrency, setTargetCurrency] = useState("USD");
 
     useEffect(() => {

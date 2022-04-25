@@ -3,8 +3,7 @@ import { useEffect, useState } from "react";
 
 export const useRatesData = () => {
 
-  caches.keys();
-
+  const [ownedCurrency, setOwnedCurrency] = useState("EUR");
   const [ratesData, setRatesData] = useState({
     state: "loading",
   })
@@ -13,7 +12,7 @@ export const useRatesData = () => {
     const getRates = async () => {
       try {
 
-        const response = await axios.get(`https://api.exchangerate.host/latest=${new Date().getTime()}`);
+        const response = await axios.get(`https://api.exchangerate.host/latest?base=${ownedCurrency}`);
 
         const { rates, date } = await response.data;
 
@@ -28,8 +27,12 @@ export const useRatesData = () => {
         });
       }
     };
-    setTimeout(getRates, 2_000);
-  }, []);
+    setTimeout(getRates, 100);
+  }, [ownedCurrency]);
 
-  return ratesData;
+  return {
+    ratesData,
+    ownedCurrency,
+    setOwnedCurrency,
+  };
 };
