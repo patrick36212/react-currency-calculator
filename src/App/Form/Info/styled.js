@@ -5,8 +5,8 @@ export const StyledContainer = styled.div`
     flex-direction: column;
     justify-items: center;
     align-items: center;
-    background-color: ${({ theme }) => theme.color.white};
-    border-radius: 30px;
+    background-color: ${({ theme }) => theme.colors.background};
+    border-radius: 10px;
     padding: 10px;
 `;
 
@@ -16,11 +16,11 @@ export const StyledInfo = styled.p`
     word-spacing: 3px;
     line-height: 1.5;
 
-    ${({error}) => error && css`
-        color: ${({theme}) => theme.color.red};
+    ${({ error }) => error && css`
+        color: ${({ theme }) => theme.colors.errorBackground};
     `}
 
-    @media (max-width: ${({theme}) => theme.breakpoint.mobileMax}px){
+    @media (max-width: ${({ theme }) => theme.breakpoints.medium}px){
         word-spacing: normal;
         margin: 0.5em;
     }

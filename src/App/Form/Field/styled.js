@@ -1,47 +1,43 @@
 import styled from "styled-components";
 
 export const StyledLabel = styled.label`
-    margin-bottom: 15px;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
+    gap: 3px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.medium}px) {
         flex-direction: column;
     }
 `;
 
 export const StyledLabelText = styled.span`
     font-weight: bold;
-    padding: 10px;
-    max-width: 350px;
+    padding: 10px 0;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.medium}px) {
         width: 100%;
     }
 `;
 
 export const StyledFormField = styled.input`
     text-align: center;
+    border: 2px solid;
     padding: 10px;
-    border-radius: 30px;
-    border: none;
-    background: ${({ theme }) => theme.color.white};
-    box-shadow: 20px 20px 60px ${({ theme }) => theme.color.gray};
+    border-radius: 10px;
+    background: ${({ theme }) => theme.colors.buttonBackgorund};
+    color: ${({ theme }) => theme.colors.fontColor};
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.medium}px) {
         width: 100%;
-        border: 1px solid ${({theme}) => theme.color.black};
     }
 
     &:required {
-        border: 1px solid ${({ theme }) => theme.color.white};
-        background: ${({ theme }) => theme.color.white};
+        border: 2px solid ${({ theme }) => theme.colors.optionBorder};
     }
     &:required:hover {
-        border: 1px solid ${({ theme }) => theme.color.black};
+        border: 2px solid ${({ theme }) => theme.colors.hoverOptionBorder};
     }
     &:invalid{
-        background: ${({theme}) => theme.color.pink}
+        background: ${({theme}) => theme.colors.requiredButtonBackgorund}
     }
 `;
