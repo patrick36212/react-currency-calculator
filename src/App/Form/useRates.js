@@ -12,7 +12,7 @@ export const useRatesData = () => {
     const getRates = async () => {
       try {
 
-        const response = await axios.get(`https://api.exchangerate.host/latest?base=${ownedCurrency}`);
+        const response = await axios.get(`https://api.exchangerate.host/latest?base=${ownedCurrency}&${new Date().getTime()}`);
 
         const { rates, date } = await response.data;
 
