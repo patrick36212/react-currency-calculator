@@ -5,14 +5,14 @@ export const useRatesData = () => {
 
   const [ownedCurrency, setOwnedCurrency] = useState("EUR");
   const [ratesData, setRatesData] = useState({
-    state: "loading",
+    state: "success",
   })
 
   useEffect(() => {
     const getRates = async () => {
       try {
 
-        const response = await axios.get(`https://api.exchangerate.host/latest?base=${ownedCurrency}&${new Date().getTime()}`);
+        const response = await axios.get(``);
 
         const { rates, date } = await response.data;
 

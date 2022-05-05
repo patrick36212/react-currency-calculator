@@ -24,20 +24,17 @@ export const StyledFormField = styled.input`
     border: 2px solid;
     padding: 10px;
     border-radius: 10px;
-    background: ${({ theme }) => theme.colors.buttonBackgorund};
-    color: ${({ theme }) => theme.colors.fontColor};
+    background: ${({ theme }) => theme.colors.button};
+    color: ${({ theme }) => theme.colors.font};
 
     @media (max-width: ${({ theme }) => theme.breakpoints.medium}px) {
         width: 100%;
     }
 
-    &:required {
-        border: 2px solid ${({ theme }) => theme.colors.optionBorder};
+    &:invalid {
+        background-color: ${({ theme }) => theme.colors.border};
     }
-    &:required:hover {
-        border: 2px solid ${({ theme }) => theme.colors.hoverOptionBorder};
-    }
-    &:invalid{
-        background: ${({theme}) => theme.colors.requiredButtonBackgorund}
+    &:hover {
+        border: 2px solid ${({ theme }) => theme.colors.border};
     }
 `;

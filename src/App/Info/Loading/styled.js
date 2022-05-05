@@ -21,7 +21,7 @@ export const Dot = styled.div`
     width: 0.8em;
     height: 0.8em;
     border-radius: 50%;
-    background-color: ${({theme}) => theme.colors.errorBackground};
+    background-color: ${({theme}) => theme.colors.button};
     animation: fade 0.8s ease-in-out alternate infinite;
 
     &:nth-of-type(1) {

@@ -6,21 +6,14 @@ export const StyledFieldset = styled.fieldset`
     border: none;
 `;
 
-export const StyledHeader = styled.h1`
-    color: ${({ theme }) => theme.colors.fontColor};
-    padding: 10px;
-    text-align: center;
-    margin: 0;
-`;
-
 export const StyledAnnotatnion = styled.p`
     margin: 0;
     text-align: right;
     padding: 5px;
-    color: ${({ theme }) => theme.colors.errorBackground};
+    color: ${({ theme }) => theme.colors.annotation};
 
     ${({ date }) => date && css`
-        color: ${({ theme }) => theme.colors.fontColor};
+        color: ${({ theme }) => theme.colors.font};
     `}
 `;
 
@@ -47,20 +40,20 @@ margin: 10px 0;
 export const StyledButton = styled.button`
 padding: 10px;
 font-weight: bold;
-color: ${({ theme }) => theme.colors.fontColor};
+color: ${({ theme }) => theme.colors.font};
 background: transparent;
 cursor: pointer;
 transition: ease-out 0.5s;
 border-radius: 10px;
-border: 2px solid ${({ theme }) => theme.colors.fontColor};
+border: 2px solid ${({ theme }) => theme.colors.border};
 
 @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
     margin-bottom: 10px;
 }
 
     &:hover {
-    color: ${({ theme }) => theme.colors.background};
-    box-shadow: inset 0-100px 0 0 ${({ theme }) => theme.colors.fontColor};
+    color: ${({ theme }) => theme.colors.font};
+    box-shadow: inset 0-100px 0 0 ${({ theme }) => theme.colors.button};
 }
 
     &:active {

@@ -1,15 +1,13 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { Select, Input } from "./Field";
+import { Select, Input } from "../Field";
 import { StyledAnnotatnion, StyledHeader, StyledWrapper, StyledButton, StyledFieldset } from "./styled";
 
-import Result from "./Result";
-import Footer from "./Footer";
-import Clock from "./Clock";
+import Result from "../Result";
 import { useRatesData } from "./useRates";
-import Info from "./Info";
-import Loading from "./Info/Loading";
-import Failed from "./Info/Failed";
+import Info from "../Info";
+import Loading from "../Info/Loading";
+import Failed from "../Info/Failed";
 
 const Form = () => {
 
@@ -48,8 +46,6 @@ const Form = () => {
     return (
         <form onSubmit={onFormSubmit}>
             <StyledFieldset>
-                <Clock />
-                <StyledHeader>Currency calculator</StyledHeader>
                 {ratesData.state === "loading" && (<Info textInfo={"Loadnig current exchange rates from European Central Bank."} loading={<Loading />} />)}
                 {ratesData.state === "error" && (<Info textInfo={`Sorry, something went wrong. Check you Internet connection. If it's ok, the error in on our side.`} additionalInfo={`You may refresh the page or try again later.`} error failed={<Failed />} />)}
                 {ratesData.state === "success" && (
@@ -103,7 +99,6 @@ const Form = () => {
                             </strong>
                         </StyledAnnotatnion>
                     </>)}
-                <Footer name="Patryk Krawczyk" year="2021" />
             </StyledFieldset>
         </form>
     );
