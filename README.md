@@ -6,9 +6,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Created: 10-09-2021
 - Upadate: 29-10-2021
 
-## Preview and demo
+## Demo
 
-![gif](currency-calculator.gif)
 Here you can find -> [**Demo**](https://patrick36212.github.io/react-currency-calculator/)
 
 ## Technologies used in project
