@@ -6,25 +6,21 @@ const breakpoints = {
 export const light = {
     breakpoints,
     colors: {
-        background: "#F3F4F5",
-        fontColor: "#0D0D0D",
-        optionBorder: "#484848",
-        hoverOptionBorder: "#36383C",
-        buttonBackgorund: "#ffffff",
-        requiredButtonBackgorund: "#FF6F91",
-        errorBackground: "#F30404",
+        background: "#f3f3f3",
+        border: "#FFC299",
+        annotation: "#DA3E52",
+        button: "#66B7F5",
+        font: "#380080",
     },
 };
 
 export const dark = {
     breakpoints,
     colors: {
-        background: "#36383C",
-        fontColor: "#ffffff",
-        optionBorder: "#525252",
-        hoverOptionBorder: "#F3F4F5",
-        buttonBackgorund: "#6e6e6e",
-        requiredButtonBackgorund: "#FF6F91",
-        errorBackground: "#F30404",
+        background: "#410590",
+        border: "#ffa970",
+        annotation: "#9b1d20",
+        button: "#8390fa",
+        font: "#f3f3f3",
     },
 };
