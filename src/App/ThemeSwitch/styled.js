@@ -1,12 +1,6 @@
 import styled, { css } from 'styled-components';
 import { ReactComponent as ThemeSwitch } from "./theme_icon.svg";
 
-export const Wrapper = styled.div`
-    margin: 5px;
-    display: flex;
-    align-content: center;
-`;
-
 export const Button = styled.button`
     cursor: pointer;
     display: flex;

@@ -1,9 +1,8 @@
-import { Wrapper, Button, Info, SwitchBody, IconBody, Icon } from "./styled";
+import { Button, Info, SwitchBody, IconBody, Icon } from "./styled";
 
 export const ThemeSwitch = ({ onClick, status, active }) => {
 
   return (
-    <Wrapper>
       <Button
         onClick={onClick}
       >
@@ -18,6 +17,5 @@ export const ThemeSwitch = ({ onClick, status, active }) => {
           </IconBody>
         </SwitchBody>
       </Button>
-    </Wrapper>
   );
 };
