@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const StyledHeader = styled.header`
     padding: 10px;
     background-color: ${({ theme }) => theme.colors.background};
-    margin-bottom: 100px;
 `;
 
 export const Wrapper = styled.div`

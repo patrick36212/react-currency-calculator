@@ -23,7 +23,7 @@ export const StyledFormField = styled.input`
     text-align: center;
     border: 2px solid;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 2px;
     background: ${({ theme }) => theme.colors.button};
     color: ${({ theme }) => theme.colors.font};
 

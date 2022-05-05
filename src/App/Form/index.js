@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { Select, Input } from "../Field";
-import { StyledAnnotatnion, StyledHeader, StyledWrapper, StyledButton, StyledFieldset } from "./styled";
+import { StyledAnnotatnion, StyledHeader, StyledWrapper, StyledButton, StyledFieldset, StyledForm } from "./styled";
 
 import Result from "../Result";
 import { useRatesData } from "./useRates";
@@ -44,7 +44,7 @@ const Form = () => {
     };
 
     return (
-        <form onSubmit={onFormSubmit}>
+        <StyledForm onSubmit={onFormSubmit}>
             <StyledFieldset>
                 {ratesData.state === "loading" && (<Info textInfo={"Loadnig current exchange rates from European Central Bank."} loading={<Loading />} />)}
                 {ratesData.state === "error" && (<Info textInfo={`Sorry, something went wrong. Check you Internet connection. If it's ok, the error in on our side.`} additionalInfo={`You may refresh the page or try again later.`} error failed={<Failed />} />)}
@@ -100,7 +100,7 @@ const Form = () => {
                         </StyledAnnotatnion>
                     </>)}
             </StyledFieldset>
-        </form>
+        </StyledForm>
     );
 };
 

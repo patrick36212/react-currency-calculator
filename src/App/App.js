@@ -6,6 +6,7 @@ import { ThemeSwitch } from "./ThemeSwitch";
 import Form from './Form';
 import Footer from './Footer';
 import Header from './Header';
+import Section from './Section';
 
 
 function App() {
@@ -26,7 +27,9 @@ function App() {
           active={isDarkTheme()}
         />
       </Header>
-      <Form />
+      <Section>
+        <Form />
+      </Section>
       <Footer name="Patryk Krawczyk" year="2021" />
     </ThemeProvider>
   );

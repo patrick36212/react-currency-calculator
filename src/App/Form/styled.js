@@ -1,7 +1,11 @@
 import styled, { css } from "styled-components";
 
+export const StyledForm = styled.form`
+    width: 70%;
+`;
+
 export const StyledFieldset = styled.fieldset`
-    border-radius: 10px;
+    border-radius: 2px;
     background: ${({ theme }) => theme.colors.background};
     border: none;
 `;
@@ -44,7 +48,7 @@ color: ${({ theme }) => theme.colors.font};
 background: transparent;
 cursor: pointer;
 transition: ease-out 0.5s;
-border-radius: 10px;
+border-radius: 2px;
 border: 2px solid ${({ theme }) => theme.colors.border};
 
 @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
