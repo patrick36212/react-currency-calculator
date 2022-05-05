@@ -6,15 +6,15 @@ export const GlobalStyle = createGlobalStyle`
             box-sizing: inherit;
         }
 
-        #root {
-            min-height: 100vh;
+        #calc {
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            align-items: center;
         }
 
         body {
-            color: ${({ theme }) => theme.colors.fontColor};
+            min-height: 100vh;
+            color: ${({ theme }) => theme.colors.font};
             font-family: 'Lato', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -22,5 +22,5 @@ export const GlobalStyle = createGlobalStyle`
             background-repeat: no-repeat;
             background-size: cover;
             box-sizing: border-box; 
-}
+        }
 `;
