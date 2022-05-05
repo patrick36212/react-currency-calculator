@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import background from "./currency-background.png"
 
 export const GlobalStyle = createGlobalStyle`
         *, ::after, ::before {
@@ -18,9 +17,6 @@ export const GlobalStyle = createGlobalStyle`
             font-family: 'Lato', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            background: url("${background}");
-            background-repeat: no-repeat;
-            background-size: cover;
             box-sizing: border-box; 
         }
 `;
