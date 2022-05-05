@@ -1,20 +1,13 @@
 {
   "files": {
-    "main.js": "/react-currency-calculator/static/js/main.bd162c13.chunk.js",
-    "main.js.map": "/react-currency-calculator/static/js/main.bd162c13.chunk.js.map",
-    "runtime-main.js": "/react-currency-calculator/static/js/runtime-main.88efdbf1.js",
-    "runtime-main.js.map": "/react-currency-calculator/static/js/runtime-main.88efdbf1.js.map",
-    "static/js/2.5ce3c6bd.chunk.js": "/react-currency-calculator/static/js/2.5ce3c6bd.chunk.js",
-    "static/js/2.5ce3c6bd.chunk.js.map": "/react-currency-calculator/static/js/2.5ce3c6bd.chunk.js.map",
-    "static/js/3.4a40b956.chunk.js": "/react-currency-calculator/static/js/3.4a40b956.chunk.js",
-    "static/js/3.4a40b956.chunk.js.map": "/react-currency-calculator/static/js/3.4a40b956.chunk.js.map",
+    "main.js": "/react-currency-calculator/static/js/main.ad7f73b0.js",
+    "static/media/currencyBackground.png": "/react-currency-calculator/static/media/currencyBackground.9aad88889a32d96cb5da.png",
     "index.html": "/react-currency-calculator/index.html",
-    "static/js/2.5ce3c6bd.chunk.js.LICENSE.txt": "/react-currency-calculator/static/js/2.5ce3c6bd.chunk.js.LICENSE.txt",
-    "static/media/currency-background.9aad8888.png": "/react-currency-calculator/static/media/currency-background.9aad8888.png"
+    "static/media/theme_icon.svg": "/react-currency-calculator/static/media/theme_icon.badcbb6c6d03bfef5b5091ad249b515e.svg",
+    "static/media/exclamation.svg": "/react-currency-calculator/static/media/exclamation.7eaeed8896295d15c4c1cfbcb5d2b03e.svg",
+    "main.ad7f73b0.js.map": "/react-currency-calculator/static/js/main.ad7f73b0.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.88efdbf1.js",
-    "static/js/2.5ce3c6bd.chunk.js",
-    "static/js/main.bd162c13.chunk.js"
+    "static/js/main.ad7f73b0.js"
   ]
 }
