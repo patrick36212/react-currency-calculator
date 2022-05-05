@@ -5,6 +5,7 @@ import { useTheme } from './ThemeSwitch/useTheme';
 import { ThemeSwitch } from "./ThemeSwitch";
 import Form from './Form';
 import Footer from './Footer';
+import Header from './Header';
 
 
 function App() {
@@ -18,11 +19,13 @@ function App() {
   return (
     <ThemeProvider theme={theme === 'light' ? light : dark}>
       <GlobalStyle />
-      <ThemeSwitch
-        onClick={toggleTheme}
-        status={theme === 'light' ? "on" : "off"}
-        active={isDarkTheme()}
-      />
+      <Header>
+        <ThemeSwitch
+          onClick={toggleTheme}
+          status={theme === 'light' ? "on" : "off"}
+          active={isDarkTheme()}
+        />
+      </Header>
       <Form />
       <Footer name="Patryk Krawczyk" year="2021" />
     </ThemeProvider>
