@@ -9,7 +9,7 @@ export const light = {
         background: "#f3f3f3",
         border: "#FFC299",
         annotation: "#DA3E52",
-        button: "#66B7F5",
+        button: "#FF9D5C",
         font: "#380080",
     },
 };
@@ -20,7 +20,7 @@ export const dark = {
         background: "#410590",
         border: "#ffa970",
         annotation: "#9b1d20",
-        button: "#8390fa",
+        button: "#FF9D5C",
         font: "#f3f3f3",
     },
 };
