@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { Select, Input } from "../Field";
-import { StyledAnnotatnion, StyledHeader, StyledWrapper, StyledButton, StyledFieldset, StyledForm } from "./styled";
+import { StyledAnnotatnion, StyledWrapper, StyledButton, StyledFieldset, StyledForm, ChangeIcon } from "./styled";
 
 import Result from "../Result";
 import { useRatesData } from "./useRates";
@@ -10,37 +10,43 @@ import Loading from "../Info/Loading";
 import Failed from "../Info/Failed";
 
 const Form = () => {
-
     const {
         ratesData,
         ownedCurrency,
         setOwnedCurrency,
-      } = useRatesData();
+    } = useRatesData();
 
+    const [targetCurrency, setTargetCurrency] = useState("USD");
     const [amount, setAmount] = useState("");
     const [result, setResult] = useState();
-    const [targetCurrency, setTargetCurrency] = useState("USD");
 
     useEffect(() => {
         document.title = `Calculate from ${ownedCurrency} to ${targetCurrency}`;
     }, [ownedCurrency, targetCurrency]);
 
-    const calculateResult = (amount) => {
+    const calculateResult = () => {
         const ownedRate = ratesData.rates[ownedCurrency];
         const targetRate = ratesData.rates[targetCurrency];
 
         setResult({
             sourceAmount: +amount,
-            targetResult: amount * targetRate,
+            targetResult: +amount * targetRate,
             ownedCurrency,
             targetCurrency,
+            ownedRate,
+            targetRate,
         });
     };
 
     const onFormSubmit = (event, ownedRate, targetRate) => {
         event.preventDefault();
-        calculateResult(amount, ownedRate, targetRate);
+        calculateResult(amount, ownedRate, targetRate)
         setAmount("");
+    };
+
+    const currencySwitch = () => {
+        setOwnedCurrency(targetCurrency);
+        setTargetCurrency(ownedCurrency);
     };
 
     return (
@@ -66,6 +72,14 @@ const Form = () => {
                                     </option>
                                 ))}
                             />
+                            <StyledWrapper changeButtonWrapper>
+                                <StyledButton
+                                    onClick={currencySwitch}
+                                    changeButton
+                                >
+                                    <ChangeIcon />
+                                </StyledButton>
+                            </StyledWrapper>
                             <Select
                                 fieldName={"To*: "}
                                 name={"currency"}

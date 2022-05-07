@@ -6,7 +6,9 @@ import { ThemeSwitch } from "./ThemeSwitch";
 import Form from './Form';
 import Footer from './Footer';
 import Header from './Header';
-import Section from './Section';
+import ParticlesBackground from './Particles';
+import Container from './Container';
+import { Section, SectionBackground } from './Section';
 
 
 function App() {
@@ -20,17 +22,22 @@ function App() {
   return (
     <ThemeProvider theme={theme === 'light' ? light : dark}>
       <GlobalStyle />
-      <Header>
-        <ThemeSwitch
-          onClick={toggleTheme}
-          status={theme === 'light' ? "on" : "off"}
-          active={isDarkTheme()}
-        />
-      </Header>
-      <Section>
-        <Form />
-      </Section>
-      <Footer name="Patryk Krawczyk" year="2021" />
+      <ParticlesBackground />
+      <Container>
+        <Section>
+          <Header>
+            <ThemeSwitch
+              onClick={toggleTheme}
+              status={theme === 'light' ? "on" : "off"}
+              active={isDarkTheme()}
+            />
+          </Header>
+        </Section>
+        <SectionBackground >
+          <Form />
+          <Footer name="Patryk Krawczyk" year="2021" />
+        </SectionBackground>
+      </Container>
     </ThemeProvider>
   );
 }

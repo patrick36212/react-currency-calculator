@@ -1,6 +1,6 @@
 import { StyledSection } from "./styled";
 
-const Section = ({ children }) => {
+export const Section = ({ children }) => {
 
     return (
         <StyledSection>
@@ -9,4 +9,12 @@ const Section = ({ children }) => {
     );
 };
 
-export default Section;
+export const SectionBackground = ({ children, backgroundSection }) => {
+    return (
+        <StyledSection
+            backgroundSection
+        >
+            {children}
+        </StyledSection>
+    );
+};

@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import background from './currencyBackground.png';
+import { css } from 'styled-components';
 
 export const StyledSection = styled.section`
-    background: url("${background}");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 40vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-bottom: 270px;
+
+    ${({ backgroundSection }) => backgroundSection && css`
+        background: ${({ theme }) => theme.colors.background};
+        padding-top: 270px;
+        margin: 0;
+    `}
 `;
