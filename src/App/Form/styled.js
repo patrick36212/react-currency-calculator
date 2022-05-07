@@ -1,7 +1,15 @@
 import styled, { css } from "styled-components";
+import { ReactComponent as ChangeButtonIcon } from './changeButton.svg';
 
 export const StyledForm = styled.form`
     width: 70%;
+    top: 170px;
+    right: 15%;
+    position: absolute;
+    background: ${({ theme }) => theme.colors.background};
+    -webkit-box-shadow: 3px 8px 10px ${({ theme }) => theme.colors.font};
+    -moz-box-shadow: 3px 8px 10px ${({ theme }) => theme.colors.font};
+    box-shadow: 3px 8px 10px ${({ theme }) => theme.colors.font};
 `;
 
 export const StyledFieldset = styled.fieldset`
@@ -27,13 +35,17 @@ grid-auto-flow: column;
 grid-gap: 10px;
 margin: 10px 0;
 
+    ${({ changeButtonWrapper }) => changeButtonWrapper && css`
+        justify-items: center;
+        align-items: flex-end;
+    `}
+
     ${({ button }) => button && css`
         justify-items: end;
     `}
 
     ${({ result }) => result && css`
         max-width: fit-content;
-        margin: 5px auto;
     `}
 
 @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
@@ -51,6 +63,13 @@ transition: ease-out 0.5s;
 border-radius: 2px;
 border: 2px solid ${({ theme }) => theme.colors.border};
 
+${({ changeButton }) => changeButton && css`
+    padding: 0;
+    border: none;
+    height: 26px;
+    border-radius: 50%;
+`}
+
 @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
     margin-bottom: 10px;
 }
@@ -63,4 +82,7 @@ border: 2px solid ${({ theme }) => theme.colors.border};
     &:active {
     transform: scale(0.9);
 }
+`;
+
+export const ChangeIcon = styled(ChangeButtonIcon)`
 `;
