@@ -24,7 +24,7 @@ export const StyledFormField = styled.input`
     border: 2px solid;
     padding: 10px;
     border-radius: 2px;
-    background: ${({ theme }) => theme.colors.button};
+    background: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.font};
 
     @media (max-width: ${({ theme }) => theme.breakpoints.medium}px) {
@@ -32,7 +32,7 @@ export const StyledFormField = styled.input`
     }
 
     &:invalid {
-        background-color: ${({ theme }) => theme.colors.border};
+        background: ${({ theme }) => theme.colors.border};
     }
     &:hover {
         border: 2px solid ${({ theme }) => theme.colors.border};
