@@ -5,9 +5,9 @@ export const StyledBoardWrapper = styled.div`
     padding: 0.35em 0.75em 0.625em;
     max-width: 70%;
     margin: auto;
-    -webkit-box-shadow: 3px 8px 10px ${({ theme }) => theme.colors.shadow};
-    -moz-box-shadow: 3px 8px 10px ${({ theme }) => theme.colors.shadow};
-    box-shadow: 3px 8px 10px ${({ theme }) => theme.colors.shadow};
+    border-radius: 5px;
+    background: ${({theme}) => theme.colors.backgroundSecondary};
+    color: ${({theme}) => theme.colors.colorSeconadry};
 `;
 
 export const StyledBoardHeader = styled.header`

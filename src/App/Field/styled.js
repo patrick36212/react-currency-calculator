@@ -23,18 +23,18 @@ export const StyledFormField = styled.input`
     text-align: center;
     border: 2px solid;
     padding: 10px;
-    border-radius: 2px;
-    background: ${({ theme }) => theme.colors.background};
-    color: ${({ theme }) => theme.colors.font};
+    border-radius: 5px;
+    background: ${({ theme }) => theme.colors.backgroundSecondary};
+    color: ${({ theme }) => theme.colors.colorSeconadry};
 
     @media (max-width: ${({ theme }) => theme.breakpoints.medium}px) {
         width: 100%;
     }
 
     &:invalid {
-        background: ${({ theme }) => theme.colors.border};
+        background: ${({ theme }) => theme.colors.backgroundAddSecondary};
     }
     &:hover {
-        border: 2px solid ${({ theme }) => theme.colors.border};
+        border: 2px solid ${({ theme }) => theme.colors.backgroundAddPrimary};
     }
 `;

@@ -28,7 +28,7 @@ export const SwitchBody = styled.span`
   width: 47px;
   padding: 2.5px;
   border-radius: 15px;
-  background: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => theme.colors.backgroundSecondary};
   border: 1px solid;
   transition: background .3s;
 `;
@@ -41,16 +41,12 @@ export const IconBody = styled.span`
   height: 20px;
   border-radius: 50%;
   transition: transform .3s, background .3s;
-  background: ${({ theme }) => theme.colors.font};
   
   ${({ active }) => active && css`
     transform: translateX(20px);
   `}
-
-  &:hover {
-      background: ${({ theme }) => theme.colors.background};
-    }
 `;
 
 export const Icon = styled(ThemeSwitch)`
+  fill: ${({ theme }) => theme.colors.colorSeconadry};
 `;

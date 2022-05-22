@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
     padding: 10px;
-    background-color: ${({ theme }) => theme.colors.background};
+    background-color: ${({ theme }) => theme.colors.backgroundPrimary};
 `;
 
 export const Wrapper = styled.div`
