@@ -1,20 +1,14 @@
 import { StyledSection } from "./styled";
 
-export const Section = ({ children }) => {
+const Section = ({ children, backgroundSection, formSection }) => {
 
-    return (
-        <StyledSection>
-            {children}
-        </StyledSection>
-    );
-};
-
-export const SectionBackground = ({ children, backgroundSection }) => {
     return (
         <StyledSection
-            backgroundSection
+            backgroundSection={backgroundSection}
         >
             {children}
         </StyledSection>
     );
 };
+
+export default Section;
