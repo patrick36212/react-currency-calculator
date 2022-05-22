@@ -1,20 +1,20 @@
 import { StyledResult, StyledResultWrapper } from "./styled";
 
-const Result = ({ result }) => (
+const Result = ({ result, targetCurrency, ownedCurrency }) => (
 
     !!result && (
         <StyledResultWrapper>
             <StyledResult>
-                {result.sourceAmount.toFixed(2)}&nbsp;{result.ownedCurrency}&nbsp;={" "}
+                {result.sourceAmount.toFixed(2)}&nbsp;{ownedCurrency}&nbsp;={" "}
                 <strong>
-                    {result.targetResult.toFixed(2)}&nbsp;{result.targetCurrency}
+                    {result.targetResult.toFixed(2)}&nbsp;{targetCurrency}
                 </strong>
             </StyledResult>
             <StyledResult additionalInfo>
-                {result.ownedRate}&nbsp;{result.ownedCurrency}&nbsp;={" "}
+                {result.ownedRate}&nbsp;{ownedCurrency}&nbsp;={" "}
             </StyledResult>
             <StyledResult additionalInfo>
-                {result.targetRate}&nbsp;{result.targetCurrency}
+                {result.targetRate}&nbsp;{targetCurrency}
             </StyledResult>
         </StyledResultWrapper>
     )
