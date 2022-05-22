@@ -13,10 +13,11 @@ const Form = () => {
     const {
         ratesData,
         ownedCurrency,
+        targetCurrency,
         setOwnedCurrency,
+        setTargetCurrency,
     } = useRatesData();
 
-    const [targetCurrency, setTargetCurrency] = useState("USD");
     const [amount, setAmount] = useState("");
     const [result, setResult] = useState();
 
@@ -25,28 +26,28 @@ const Form = () => {
     }, [ownedCurrency, targetCurrency]);
 
     const calculateResult = () => {
-        const ownedRate = ratesData.rates[ownedCurrency];
+        const ownedRate = ratesData.rates[ownedCurrency]
         const targetRate = ratesData.rates[targetCurrency];
-
-        setResult({
-            sourceAmount: +amount,
-            targetResult: +amount * targetRate,
-            ownedCurrency,
-            targetCurrency,
-            ownedRate,
-            targetRate,
-        });
+        setResult(
+            {
+                sourceAmount: +amount,
+                targetResult: +amount * targetRate,
+                ownedRate,
+                targetRate
+            }
+        );
     };
 
-    const onFormSubmit = (event, ownedRate, targetRate) => {
+    const onFormSubmit = (event) => {
         event.preventDefault();
-        calculateResult(amount, ownedRate, targetRate)
+        calculateResult();
         setAmount("");
     };
 
     const currencySwitch = () => {
         setOwnedCurrency(targetCurrency);
         setTargetCurrency(ownedCurrency);
+        setResult();
     };
 
     return (
@@ -104,7 +105,11 @@ const Form = () => {
                             <StyledButton>Calculate</StyledButton>
                         </StyledWrapper>
                         <StyledWrapper result>
-                            <Result result={result} />
+                            <Result
+                                result={result}
+                                targetCurrency={targetCurrency}
+                                ownedCurrency={ownedCurrency}
+                            />
                         </StyledWrapper>
                         <StyledAnnotatnion date >
                             Exchange rates valid as of:<br />

@@ -3,13 +3,11 @@ import { ReactComponent as ChangeButtonIcon } from './changeButton.svg';
 
 export const StyledForm = styled.form`
     width: 70%;
-    top: 170px;
-    right: 15%;
-    position: absolute;
+    margin: 30px auto;
     background: ${({ theme }) => theme.colors.background};
-    -webkit-box-shadow: 3px 8px 10px ${({ theme }) => theme.colors.font};
-    -moz-box-shadow: 3px 8px 10px ${({ theme }) => theme.colors.font};
-    box-shadow: 3px 8px 10px ${({ theme }) => theme.colors.font};
+    -webkit-box-shadow: 3px 8px 10px ${({ theme }) => theme.colors.shadow};
+    -moz-box-shadow: 3px 8px 10px ${({ theme }) => theme.colors.shadow};
+    box-shadow: 3px 8px 10px ${({ theme }) => theme.colors.shadow};
 `;
 
 export const StyledFieldset = styled.fieldset`
