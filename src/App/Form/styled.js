@@ -50,12 +50,12 @@ export const StyledWrapper = styled.div`
 export const StyledButton = styled.button`
     padding: 10px;
     font-weight: bold;
-    color: ${({ theme }) => theme.colors.colorSeconadry};
+    color: ${({ theme }) => theme.colors.colorPrimary};
     background: transparent;
     cursor: pointer;
     transition: ease-out 0.5s;
     border-radius: 2px;
-    border: 2px solid ${({ theme }) => theme.colors.backgroundSecondary};
+    border: 2px solid ${({ theme }) => theme.colors.backgroundAddPrimary};
 
     ${({ changeButton }) => changeButton && css`
         padding: 0;
@@ -69,7 +69,8 @@ export const StyledButton = styled.button`
     }
 
         &:hover {
-        box-shadow: inset 0-100px 0 0 ${({ theme }) => theme.colors.backgroundSecondary};
+        color: ${({ theme }) => theme.colors.colorSeconadry};
+        box-shadow: inset 0-100px 0 0 ${({ theme }) => theme.colors.backgroundAddPrimary};
     }
 
         &:active {
@@ -78,5 +79,5 @@ export const StyledButton = styled.button`
 `;
 
 export const ChangeIcon = styled(ChangeButtonIcon)`
-    fill: ${({ theme }) => theme.colors.colorSeconadry};
+    fill: ${({ theme }) => theme.colors.colorPrimary};
 `;

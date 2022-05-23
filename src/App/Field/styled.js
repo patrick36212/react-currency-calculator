@@ -24,7 +24,7 @@ export const StyledFormField = styled.input`
     border: 2px solid;
     padding: 10px;
     border-radius: 5px;
-    background: ${({ theme }) => theme.colors.backgroundSecondary};
+    background: ${({ theme }) => theme.colors.backgroundAddPrimary};
     color: ${({ theme }) => theme.colors.colorSeconadry};
 
     @media (max-width: ${({ theme }) => theme.breakpoints.medium}px) {

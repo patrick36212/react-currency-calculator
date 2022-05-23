@@ -6,12 +6,12 @@ const breakpoints = {
 export const light = {
     breakpoints,
     colors: {
-        backgroundPrimary: "#5F85DB",
-        backgroundSecondary: "#90B8F8",
-        backgroundAddPrimary: "#26282B", 
-        backgroundAddSecondary: "#353941",
-        colorPrimary: "#f3f3f3",
-        colorSeconadry: "#111213",
+        backgroundPrimary: "#DDE0E3",
+        backgroundSecondary: "#F4F4F6",
+        backgroundAddPrimary: "#5F85DB", 
+        backgroundAddSecondary: "#90B8F8",
+        colorPrimary: "#111213",
+        colorSeconadry: "#f3f3f3",
         annotation: "#9b1d20",
     },
 };
@@ -21,7 +21,7 @@ export const dark = {
     colors: {
         backgroundPrimary: "#26282B",
         backgroundSecondary: "#353941",
-        backgroundAddPrimary: "#5F85DB", 
+        backgroundAddPrimary: "#0252A2", 
         backgroundAddSecondary: "#90B8F8",
         colorPrimary: "#f3f3f3",
         colorSeconadry: "#111213",

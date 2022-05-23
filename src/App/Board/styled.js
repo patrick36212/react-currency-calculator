@@ -7,7 +7,7 @@ export const StyledBoardWrapper = styled.div`
     margin: auto;
     border-radius: 5px;
     background: ${({theme}) => theme.colors.backgroundSecondary};
-    color: ${({theme}) => theme.colors.colorSeconadry};
+    color: ${({theme}) => theme.colors.colorPrimary};
 `;
 
 export const StyledBoardHeader = styled.header`

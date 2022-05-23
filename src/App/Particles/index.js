@@ -1,9 +1,8 @@
 import Particles from "react-tsparticles";
 import { tsParticles } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
-import particlesConfig from "./particles-config";
 
-const ParticlesBackground = () => {
+const ParticlesBackground = ({ options }) => {
   const particlesInit = async () => {
     await loadFull(tsParticles);
   };
@@ -12,7 +11,7 @@ const ParticlesBackground = () => {
     <Particles
       id="tsparticles"
       init={particlesInit}
-      options={particlesConfig}
+      options={options}
     />
   );
 };

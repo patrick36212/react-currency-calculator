@@ -8,7 +8,9 @@ import Footer from './Footer';
 import Header from './Header';
 import ParticlesBackground from './Particles';
 import Container from './Container';
-import { Section, SectionBackground } from './Section';
+import Section from './Section';
+import Board from './Board';
+import { particlesConfigLight, particlesConfigDark } from "./Particles/particles-config";
 
 
 function App() {
@@ -22,7 +24,7 @@ function App() {
   return (
     <ThemeProvider theme={theme === 'light' ? light : dark}>
       <GlobalStyle />
-      <ParticlesBackground />
+      <ParticlesBackground options={theme === 'light' ? particlesConfigLight : particlesConfigDark} />
       <Container>
         <Section>
           <Header>
@@ -33,10 +35,11 @@ function App() {
             />
           </Header>
         </Section>
-        <SectionBackground >
-          <Form />
-          <Footer name="Patryk Krawczyk" year="2021" />
-        </SectionBackground>
+        <Form />
+        <Section backgroundSection={true}>
+          <Board />
+        </Section>
+        <Footer name="Patryk Krawczyk" year="2021" />
       </Container>
     </ThemeProvider>
   );

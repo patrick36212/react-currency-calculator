@@ -48,5 +48,5 @@ export const IconBody = styled.span`
 `;
 
 export const Icon = styled(ThemeSwitch)`
-  fill: ${({ theme }) => theme.colors.colorSeconadry};
+  fill: ${({ theme }) => theme.colors.colorPrimary};
 `;
