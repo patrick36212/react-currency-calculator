@@ -6,8 +6,8 @@ export const StyledBoardWrapper = styled.div`
     max-width: 70%;
     margin: auto;
     border-radius: 5px;
-    background: ${({theme}) => theme.colors.backgroundSecondary};
-    color: ${({theme}) => theme.colors.colorPrimary};
+    background: ${({ theme }) => theme.colors.backgroundSecondary};
+    color: ${({ theme }) => theme.colors.colorPrimary};
 `;
 
 export const StyledBoardHeader = styled.header`
@@ -23,17 +23,39 @@ export const StyledBoardName = styled.h2`
     text-align: left;
 `;
 
+export const StyledTableName = styled.h3`
+    margin: 10px 0;
+`;
+
 export const StyledCurrenciesWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     padding: 5px 0;
     text-align: center;
+    border-bottom: 2px solid ${({ theme }) => theme.colors.backgroundPrimary};
 
-    ${({ tableHeader }) => tableHeader && css`
-        font-weight: bold;
+    ${({ base }) => base && css`
+        border: none;
     `}
 `;
 
-export const StyledPropertiesContainer = styled.div`
+export const StyledBase = styled.input`
+    text-align: center;
+    border: 2px solid;
+    padding: 10px;
+    border-radius: 5px;
+    background: ${({ theme }) => theme.colors.backgroundAddPrimary};
+    color: ${({ theme }) => theme.colors.colorSeconadry};
 
+    @media (max-width: ${({ theme }) => theme.breakpoints.medium}px) {
+        width: 100%;
+    }
+
+    &:hover {
+        border: 2px solid ${({ theme }) => theme.colors.backgroundAddPrimary};
+    }
+`;
+
+export const StyledPropertiesContainer = styled.span`
+    padding: 5px 0;
 `;

@@ -9,7 +9,7 @@ import Header from './Header';
 import ParticlesBackground from './Particles';
 import Container from './Container';
 import Section from './Section';
-import Board from './Board';
+// import Board from './Board';
 import { particlesConfigLight, particlesConfigDark } from "./Particles/particles-config";
 
 
@@ -36,10 +36,10 @@ function App() {
           </Header>
         </Section>
         <Form />
-        <Section backgroundSection={true}>
+        {/* <Section backgroundSection={true}>
           <Board />
-        </Section>
-        <Footer name="Patryk Krawczyk" year="2021" />
+        </Section> */}
+        <Footer />
       </Container>
     </ThemeProvider>
   );
