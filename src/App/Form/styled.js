@@ -4,12 +4,20 @@ import { ReactComponent as ChangeButtonIcon } from './changeButton.svg';
 export const StyledForm = styled.form`
     width: 70%;
     margin: 30px auto;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px){
+        width: 90%;
+    }
 `;
 
 export const StyledFieldset = styled.fieldset`
     border-radius: 2px;
     background: ${({ theme }) => theme.colors.backgroundPrimary};
     border: none;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px){
+        padding: 24px;
+    }
 `;
 
 export const StyledAnnotatnion = styled.p`

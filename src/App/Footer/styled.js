@@ -9,12 +9,21 @@ export const StyledFooter = styled.footer`
     margin-top: 50px;
     color: ${({ theme }) => theme.colors.colorSeconadry};
     background: ${({ theme }) => theme.colors.backgroundAddPrimary};
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px){
+        position: inherit;
+    }
 `;
 
 export const StyledFooterWrapper = styled.div`
     max-width: 70%;
     margin: auto;
     padding: 12px 0;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px){
+        max-width: 100%;
+        padding: 12px;
+    }
 `;
 
 export const StyledFooterHeader = styled.h4`
