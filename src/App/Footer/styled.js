@@ -44,6 +44,10 @@ export const StyledFooterHeader = styled.h4`
             width: 100%;
             }
         }
+    
+    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px){
+        font-size: 13px;
+    }
 `;
 
 
@@ -61,6 +65,10 @@ export const StyledLink = styled.a`
 
 export const StyledAbout = styled.p`
     max-width: 60%;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px){
+        max-width: 100%;
+    }
 `;
 
 export const StyledSocialList = styled.ul`
