@@ -1,19 +1,17 @@
-import { ThemeProvider } from 'styled-components';
-import { GlobalStyle } from '../GlobalStyle';
 import { light, dark } from '../theme';
-import { useTheme } from './ThemeSwitch/useTheme';
-import { ThemeSwitch } from "./ThemeSwitch";
-import Form from './Form';
-import Footer from './Footer';
-import Header from './Header';
-import ParticlesBackground from './Particles';
-import Container from './Container';
-import Section from './Section';
+import { useTheme } from '../common/Header/ThemeSwitch/useTheme';
+import { ThemeSwitch } from "../common/Header/ThemeSwitch";
+import Form from '../features/calculator/Form';
+import Footer from '../common/Footer';
+import Header from '../common/Footer';
+import ParticlesBackground from '../common/Particles';
+import Container from '../common/Container';
+import Section from '../common/Section';
 // import Board from './Board';
-import { particlesConfigLight, particlesConfigDark } from "./Particles/particles-config";
+import { particlesConfigLight, particlesConfigDark } from "../common/Particles/particles-config";
 
 
-function App() {
+const Exchange = () => {
 
   const {
     theme,
@@ -22,8 +20,7 @@ function App() {
   } = useTheme();
 
   return (
-    <ThemeProvider theme={theme === 'light' ? light : dark}>
-      <GlobalStyle />
+    <>
       <ParticlesBackground options={theme === 'light' ? particlesConfigLight : particlesConfigDark} />
       <Container>
         <Section>
@@ -41,8 +38,8 @@ function App() {
         </Section> */}
         <Footer />
       </Container>
-    </ThemeProvider>
+    </>
   );
 }
 
-export default App;
+export default Exchange;

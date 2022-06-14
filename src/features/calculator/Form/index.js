@@ -5,9 +5,9 @@ import { StyledAnnotatnion, StyledWrapper, StyledButton, StyledFieldset, StyledF
 
 import Result from "../Result";
 import { useRatesData } from "./useRates";
-import Info from "../Info";
-import Loading from "../Info/Loading";
-import Failed from "../Info/Failed";
+import Info from "../../../common/Info";
+import Loading from "../../../common/Info/Loading";
+import Failed from "../../../common/Info/Failed";
 
 const Form = () => {
     const {

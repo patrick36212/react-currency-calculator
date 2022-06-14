@@ -1,6 +1,6 @@
 import { StyledSection } from "./styled";
 
-const Section = ({ children, backgroundSection, formSection }) => {
+const Section = ({ children, backgroundSection }) => {
 
     return (
         <StyledSection
