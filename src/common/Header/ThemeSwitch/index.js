@@ -8,7 +8,7 @@ export const ThemeSwitch = () => {
 
   return (
       <Button
-        onClick={() => dispatch(toggleTheme)}
+        onClick={() => dispatch(toggleTheme())}
       >
         <Info>
           Dark mode {isDarkTheme ? "on" : "off"}
