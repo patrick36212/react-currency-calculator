@@ -1,28 +1,31 @@
-import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Select, Input } from "../Field";
-import { StyledAnnotatnion, StyledWrapper, StyledButton, StyledFieldset, StyledForm, ChangeIcon } from "./styled";
-
-import Result from "../Result";
+import {
+    Select,
+    Input
+} from "../Field";
+import {
+    StyledAnnotatnion,
+    StyledWrapper,
+    StyledButton,
+    StyledFieldset,
+    StyledForm,
+    ChangeIcon
+} from "./styled";
 import { useRatesData } from "./useRates";
-import { selectAmount, selectOwnedCurrency, selectTargetCurrency } from "../calculatorSlice";
+import Result from "../Result";
 
 const Form = () => {
-    const ownedCurrency = useSelector(selectOwnedCurrency);
-    const targetCurrency = useSelector(selectTargetCurrency);
-    const amount = useSelector(selectAmount);
-
-    // const dispatch = useDispatch();
 
     const {
         ratesData,
-        // ownedCurrency,
-        // targetCurrency,
+        ownedCurrency,
+        targetCurrency,
         setOwnedCurrency,
         setTargetCurrency,
     } = useRatesData();
 
+    const [amount, setAmount] = useState("")
     const [result, setResult] = useState();
 
     useEffect(() => {
@@ -45,6 +48,7 @@ const Form = () => {
     const onFormSubmit = (event) => {
         event.preventDefault();
         calculateResult();
+        setAmount("")
     };
 
     const currencySwitch = () => {
@@ -97,19 +101,17 @@ const Form = () => {
                     <Input
                         fieldName={`${ownedCurrency} Amount*: `}
                         value={amount}
-                        onChange={({ target }) => (target.value)}
+                        onChange={(event) => setAmount(event.target.value)}
                     />
                 </StyledWrapper>
                 <StyledWrapper button>
                     <StyledButton>Calculate</StyledButton>
                 </StyledWrapper>
-                <StyledWrapper result>
-                    <Result
-                        result={result}
-                        targetCurrency={targetCurrency}
-                        ownedCurrency={ownedCurrency}
-                    />
-                </StyledWrapper>
+                <Result
+                    result={result}
+                    targetCurrency={targetCurrency}
+                    ownedCurrency={ownedCurrency}
+                />
                 <StyledAnnotatnion date >
                     Exchange rates valid as of:<br />
                     <strong>

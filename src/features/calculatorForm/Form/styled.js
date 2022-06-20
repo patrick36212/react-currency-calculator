@@ -46,10 +46,6 @@ export const StyledWrapper = styled.div`
             justify-items: end;
         `}
 
-        ${({ result }) => result && css`
-            max-width: fit-content;
-        `}
-
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
         grid-auto-flow: row;
     }
