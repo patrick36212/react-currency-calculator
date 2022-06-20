@@ -1,10 +1,10 @@
 import { ThemeSwitch } from "../common/Header/ThemeSwitch";
-import Form from '../features/calculator/Form';
+import Form from '../features/calculatorForm/Form';
 import Footer from '../common/Footer';
 import Header from '../common/Header';
 import Container from '../common/Container';
 import Section from '../common/Section';
-import Board from '../features/historical/Board';
+import Board from '../features/historicalData/Board';
 
 const Exchange = () => {
 
