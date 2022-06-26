@@ -4,7 +4,7 @@ import Footer from '../common/Footer';
 import Header from '../common/Header';
 import Container from '../common/Container';
 import Section from '../common/Section';
-import Board from '../features/historicalData/Board';
+import Board from '../features/historicalCurrencies/Board';
 
 const Exchange = () => {
 
@@ -15,7 +15,7 @@ const Exchange = () => {
           <ThemeSwitch />
         </Header>
       </Section>
-      <Form />
+        <Form />
       <Section backgroundSection={true}>
         <Board />
       </Section>
