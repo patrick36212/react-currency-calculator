@@ -15,20 +15,23 @@ import {
 import { useRatesData } from "./useRates";
 import Result from "../Result";
 import { useDispatch, useSelector } from "react-redux";
-import { selectAmount, handleAmountChange } from "../currenciesSlice";
+import { 
+    selectAmount, 
+    handleAmountChange, 
+    selectOwnedCurrency,
+    handleOwnedCurrency, 
+    selectTargetCurrency,
+    handleTargetCurrency
+} from "../currenciesSlice";
 
 const Form = () => {
 
     const amount = useSelector(selectAmount);
+    const ownedCurrency = useSelector(selectOwnedCurrency);
+    const targetCurrency = useSelector(selectTargetCurrency);
     const dispatch = useDispatch();
 
-    const {
-        ratesData,
-        ownedCurrency,
-        targetCurrency,
-        setOwnedCurrency,
-        setTargetCurrency,
-    } = useRatesData();
+    const { ratesData } = useRatesData();
 
     const [result, setResult] = useState();
 
@@ -55,9 +58,6 @@ const Form = () => {
     };
 
     const currencySwitch = () => {
-        setOwnedCurrency(targetCurrency);
-        setTargetCurrency(ownedCurrency);
-        setResult();
     };
 
     return (
@@ -69,7 +69,7 @@ const Form = () => {
                         fieldName={"From*: "}
                         name={"currency"}
                         value={ownedCurrency}
-                        onChange={({ target }) => setOwnedCurrency(target.value)}
+                        onChange={({ target }) => dispatch(handleOwnedCurrency(target.value))}
                         option={!!ratesData.rates && Object.keys(ratesData.rates).map((currency) => (
                             <option
                                 key={currency}
@@ -91,7 +91,7 @@ const Form = () => {
                         fieldName={"To*: "}
                         name={"currency"}
                         value={targetCurrency}
-                        onChange={({ target }) => setTargetCurrency(target.value)}
+                        onChange={({ target }) => dispatch(handleTargetCurrency(target.value))}
                         option={!!ratesData.rates && Object.keys(ratesData.rates).map((currency) => (
                             <option
                                 key={currency}
