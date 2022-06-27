@@ -14,8 +14,13 @@ import {
 } from "./styled";
 import { useRatesData } from "./useRates";
 import Result from "../Result";
+import { useDispatch, useSelector } from "react-redux";
+import { selectAmount, handleAmountChange } from "../currenciesSlice";
 
 const Form = () => {
+
+    const amount = useSelector(selectAmount);
+    const dispatch = useDispatch();
 
     const {
         ratesData,
@@ -25,7 +30,6 @@ const Form = () => {
         setTargetCurrency,
     } = useRatesData();
 
-    const [amount, setAmount] = useState("")
     const [result, setResult] = useState();
 
     useEffect(() => {
@@ -48,7 +52,6 @@ const Form = () => {
     const onFormSubmit = (event) => {
         event.preventDefault();
         calculateResult();
-        setAmount("")
     };
 
     const currencySwitch = () => {
@@ -101,7 +104,7 @@ const Form = () => {
                     <Input
                         fieldName={`${ownedCurrency} Amount*: `}
                         value={amount}
-                        onChange={(event) => setAmount(event.target.value)}
+                        onChange={({ target }) => dispatch(handleAmountChange(target.value))}
                     />
                 </StyledWrapper>
                 <StyledWrapper button>
